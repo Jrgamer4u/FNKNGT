@@ -15,13 +15,13 @@ import flixel.util.FlxColor;
 class AnimationDebug extends FlxState
 {
 	var bf:Boyfriend;
-	var dad:Character;
+	var fenberry:Character;
 	var char:Character;
 	var textAnim:FlxText;
 	var dumbTexts:FlxTypedGroup<FlxText>;
 	var animList:Array<String> = [];
 	var curAnim:Int = 0;
-	var isDad:Bool = true;
+	var isfenberry:Bool = true;
 	var daAnim:String = 'spooky';
 	var camFollow:FlxObject;
 
@@ -40,17 +40,17 @@ class AnimationDebug extends FlxState
 		add(gridBG);
 
 		if (daAnim == 'bf')
-			isDad = false;
+			isfenberry = false;
 
-		if (isDad)
+		if (isfenberry)
 		{
-			dad = new Character(0, 0, daAnim);
-			dad.screenCenter();
-			dad.debugMode = true;
-			add(dad);
+			fenberry = new Character(0, 0, daAnim);
+			fenberry.screenCenter();
+			fenberry.debugMode = true;
+			add(fenberry);
 
-			char = dad;
-			dad.flipX = false;
+			char = fenberry;
+			fenberry.flipX = false;
 		}
 		else
 		{

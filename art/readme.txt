@@ -16,7 +16,7 @@
                  /          _/           /             
 
 HEY
-Thanks for downloadin Friday Night FUNKIN'
+Thanks for downloadin FNKNGT
 If you downloaded this from any other place than ninja-muffin24.itch.io/FUNKIN
 You might be in DANGER!!! 
 
