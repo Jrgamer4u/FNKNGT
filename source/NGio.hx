@@ -35,7 +35,6 @@ class NGio
 
 	public static function noLogin(api:String)
 	{
-		trace('INIT NOLOGIN');
 		GAME_VER = "v" + Application.current.meta.get('version');
 
 		if (api.length != 0)
@@ -49,7 +48,6 @@ class NGio
 					GAME_VER = response.result.data.currentVersion;
 					GAME_VER_NUMS = GAME_VER.split(" ")[0].trim();
 					trace('CURRENT NG VERSION: ' + GAME_VER);
-					trace('CURRENT NG VERSION: ' + GAME_VER_NUMS);
 					gotOnlineVer = true;
 				});
 
