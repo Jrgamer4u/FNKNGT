@@ -29,7 +29,7 @@ class Song
 	public var speed:Float = 1;
 
 	public var player1:String = 'bf';
-	public var player2:String = 'dad';
+	public var player2:String = 'fenberry';
 
 	public function new(song, notes, bpm)
 	{
@@ -40,7 +40,7 @@ class Song
 
 	public static function loadFromJson(jsonInput:String, ?folder:String):SwagSong
 	{
-		var rawJson = Assets.getText(Paths.json(folder.toLowerCase() + '/' + jsonInput.toLowerCase())).trim();
+		var rawJson = Assets.getText('assets/data/' + folder.toLowerCase() + '/' + jsonInput.toLowerCase() + '.json').trim();
 
 		while (!rawJson.endsWith("}"))
 		{

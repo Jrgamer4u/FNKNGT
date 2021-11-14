@@ -22,14 +22,16 @@ class MusicBeatState extends FlxUIState
 	override function create()
 	{
 		if (transIn != null)
-			trace('reg ' + transIn.region);
+			#if (!web)
+			TitleState.soundExt = '.ogg';
+			#end
 
 		super.create();
 	}
 
 	override function update(elapsed:Float)
 	{
-		//everyStep();
+		// everyStep();
 		var oldStep:Int = curStep;
 
 		updateCurStep();
@@ -70,6 +72,6 @@ class MusicBeatState extends FlxUIState
 
 	public function beatHit():Void
 	{
-		//do literally nothing dumbass
+		// do literally nothing dumbass
 	}
 }
