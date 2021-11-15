@@ -1,6 +1,6 @@
 add paintbrush girl
-add bad oklahoman man
-add bad magnetic man
+add oklahoman man
+add magnetic man
 add an outlier
 add drippy boomerang
 add child drawing
