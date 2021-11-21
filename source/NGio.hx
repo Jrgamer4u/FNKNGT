@@ -185,14 +185,4 @@ class NGio
 		NG.core.calls.event.logEvent(event).send();
 		trace('should have logged: ' + event);
 	}
-
-	inline static public function unlockMedal(id:Int)
-	{
-		if (isLoggedIn)
-		{
-			var medal = NG.core.medals.get(id);
-			if (!medal.unlocked)
-				medal.sendUnlock();
-		}
-	}
 }

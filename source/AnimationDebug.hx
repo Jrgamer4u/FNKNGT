@@ -21,7 +21,7 @@ class AnimationDebug extends FlxState
 	var dumbTexts:FlxTypedGroup<FlxText>;
 	var animList:Array<String> = [];
 	var curAnim:Int = 0;
-	var isfenberry:Bool = true;
+	var istheotherone:Bool = true;
 	var daAnim:String = 'spooky';
 	var camFollow:FlxObject;
 
@@ -40,9 +40,9 @@ class AnimationDebug extends FlxState
 		add(gridBG);
 
 		if (daAnim == 'bf')
-			isfenberry = false;
+			istheotherone = false;
 
-		if (isfenberry)
+		if (istheotherone)
 		{
 			fenberry = new Character(0, 0, daAnim);
 			fenberry.screenCenter();
