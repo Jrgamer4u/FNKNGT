@@ -72,26 +72,22 @@ class DialogueBox extends FlxSpriteGroup
 		if (!hasDialog)
 			return;
 
+		portraitLeft = new FlxSprite(240, 40);
+
 		if (PlayState.SONG.song.toLowerCase() == 'hell-o')
 		{
-			portraitLeft = new FlxSprite(240, 40);
 			portraitLeft.frames = FlxAtlasFrames.fromSparrow('assets/images/fenberryPortrait.png', 'assets/images/fenberryPortrait.xml');
 			portraitLeft.animation.addByPrefix('enter', 'fenberry Portrait Enter', 24, false);
-			portraitLeft.updateHitbox();
-			portraitLeft.scrollFactor.set();
-			add(portraitLeft);
-			portraitLeft.visible = false;
 		}
 		else if (PlayState.SONG.song.toLowerCase() == 'outliiier')
 		{
-			portraitLeft = new FlxSprite(240, 40);
 			portraitLeft.frames = FlxAtlasFrames.fromSparrow('assets/images/outlierPortrait.png', 'assets/images/outlierPortrait.xml');
 			portraitLeft.animation.addByPrefix('enter', 'outlier Portrait Enter', 24, false);
-			portraitLeft.updateHitbox();
-			portraitLeft.scrollFactor.set();
-			add(portraitLeft);
-			portraitLeft.visible = false;
 		}
+		portraitLeft.updateHitbox();
+		portraitLeft.scrollFactor.set();
+		add(portraitLeft);
+		portraitLeft.visible = false;
 
 		portraitRight = new FlxSprite(0, 40);
 		portraitRight.frames = FlxAtlasFrames.fromSparrow('assets/images/bfPortrait.png', 'assets/images/bfPortrait.xml');
@@ -156,8 +152,7 @@ class DialogueBox extends FlxSpriteGroup
 				{
 					isEnding = true;
 
-					if (PlayState.SONG.song.toLowerCase() == 'hell-o')
-						FlxG.sound.music.fadeOut(2.2, 0);
+					FlxG.sound.music.fadeOut(2.2, 0);
 
 					new FlxTimer().start(0.2, function(tmr:FlxTimer)
 					{
@@ -197,7 +192,7 @@ class DialogueBox extends FlxSpriteGroup
 
 		switch (curCharacter)
 		{
-			case 'fenberry' | 'outlier':
+			case 'too':
 				portraitRight.visible = false;
 				if (!portraitLeft.visible)
 				{
