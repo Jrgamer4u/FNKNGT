@@ -2,7 +2,7 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="FNKNGT'" file="FNKNGT" packageName="com.ninjamuffin99.funkin" main="Main" version="0.6" company="OuBoRe" />
+	<app title="FNKNGT" file="FNKNGT" packageName="com.ninjamuffin99.funkin" main="Main" version="0.6" company="OuBoRe" />
 
 	<set name="APP_ID" value="0x0100f6c013bbc000" />
 	<app preloader="flixel.system.FlxPreloader" />
@@ -31,7 +31,7 @@
 
 	<assets path="assets/images" />
 	<assets path="assets/data" />
-	<assets path='art/readme.txt' rename='do NOT readme.txt' />
+	<assets path='art/readme.txt' rename='readme.txt' />
 	
 	<assets path="assets/music" include="*.mp3" if="web"/>
 	<assets path="assets/music" include="*.ogg" unless="web"/>
@@ -54,6 +54,9 @@
 	<haxelib name="newgrounds"/>
 	<haxelib name="faxe" if='switch'/>
 	<haxelib name="polymod"/>
+
+	<haxelib name="actuate" />
+	<haxelib name="extension-webm" if="desktop" />
 
 	<!-- ______________________________ Haxedefines _____________________________ -->
 

@@ -9,13 +9,10 @@ import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 
-/**
-	*DEBUG MODE
- */
 class AnimationDebug extends FlxState
 {
 	var bf:Boyfriend;
-	var fenberry:Character;
+	var theotheronedb:Character;
 	var char:Character;
 	var textAnim:FlxText;
 	var dumbTexts:FlxTypedGroup<FlxText>;
@@ -44,13 +41,13 @@ class AnimationDebug extends FlxState
 
 		if (istheotherone)
 		{
-			fenberry = new Character(0, 0, daAnim);
-			fenberry.screenCenter();
-			fenberry.debugMode = true;
-			add(fenberry);
+			theotheronedb = new Character(0, 0, daAnim);
+			theotheronedb.screenCenter();
+			theotheronedb.debugMode = true;
+			add(theotheronedb);
 
-			char = fenberry;
-			fenberry.flipX = false;
+			char = theotheronedb;
+			theotheronedb.flipX = false;
 		}
 		else
 		{

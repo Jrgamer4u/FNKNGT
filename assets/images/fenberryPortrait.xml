@@ -1,7 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TextureAtlas imagePath="fenberryPortrait.png">
-	<!-- Created with Adobe Animate version 21.0.2.37893 -->
-	<!-- http://www.adobe.com/products/animate.html -->
 	<SubTexture name="fenberry Portrait Enter0000" x="0" y="0" width="405" height="392" frameX="-27" frameY="0" frameWidth="432" frameHeight="393"/>
 	<SubTexture name="fenberry Portrait Enter0001" x="405" y="0" width="405" height="393" frameX="-20" frameY="0" frameWidth="432" frameHeight="393"/>
 	<SubTexture name="fenberry Portrait Enter0002" x="405" y="0" width="405" height="393" frameX="-16" frameY="0" frameWidth="432" frameHeight="393"/>

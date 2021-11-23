@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="OUTLIER.png">
+	<SubTexture name="OUTLIER Sing Note DOWN0000" x="3465" y="638" width="505" height="518" frameX="0" frameY="-120" frameWidth="505" frameHeight="638"/>
+	<SubTexture name="OUTLIER Sing Note LEFT0000" x="594" y="625" width="797" height="638"/>
+	<SubTexture name="OUTLIER Sing Note LEFT0001" x="594" y="625" width="797" height="638"/>
+	<SubTexture name="OUTLIER Sing Note LEFT0002" x="594" y="625" width="797" height="638"/>
+	<SubTexture name="OUTLIER Sing Note LEFT0003" x="594" y="625" width="797" height="638"/>
+	<SubTexture name="OUTLIER Sing Note LEFT0004" x="594" y="625" width="797" height="638"/>
+	<SubTexture name="OUTLIER Sing Note LEFT0005" x="1391" y="638" width="740" height="638"/>
+	<SubTexture name="OUTLIER Sing Note LEFT0006" x="1391" y="638" width="740" height="638"/>
+	<SubTexture name="OUTLIER Sing Note LEFT0007" x="2131" y="638" width="651" height="638"/>
+	<SubTexture name="OUTLIER Sing Note LEFT0008" x="2782" y="638" width="683" height="638"/>
+	<SubTexture name="OUTLIER Sing Note LEFT0009" x="2782" y="638" width="683" height="638"/>
+	<SubTexture name="OUTLIER Sing Note LEFT0010" x="2782" y="638" width="683" height="638"/>
+	<SubTexture name="OUTLIER Sing Note RIGHT0000" x="1854" y="0" width="594" height="638"/>
+	<SubTexture name="OUTLIER Sing Note RIGHT0001" x="1854" y="0" width="594" height="638"/>
+	<SubTexture name="OUTLIER Sing Note RIGHT0002" x="1854" y="0" width="594" height="638"/>
+	<SubTexture name="OUTLIER Sing Note RIGHT0003" x="2448" y="0" width="594" height="638"/>
+	<SubTexture name="OUTLIER Sing Note RIGHT0004" x="3042" y="0" width="594" height="638"/>
+	<SubTexture name="OUTLIER Sing Note RIGHT0005" x="3636" y="0" width="594" height="638"/>
+	<SubTexture name="OUTLIER Sing Note RIGHT0006" x="3636" y="0" width="594" height="638"/>
+	<SubTexture name="OUTLIER Sing Note RIGHT0007" x="3636" y="0" width="594" height="638"/>
+	<SubTexture name="OUTLIER Sing Note RIGHT0008" x="4230" y="0" width="594" height="638"/>
+	<SubTexture name="OUTLIER Sing Note RIGHT0009" x="0" y="625" width="594" height="638"/>
+	<SubTexture name="OUTLIER Sing Note RIGHT0010" x="0" y="625" width="594" height="638"/>
+	<SubTexture name="OUTLIER Sing Note UP0000" x="3970" y="638" width="462" height="661" frameX="0" frameY="-23" frameWidth="462" frameHeight="638"/>
+	<SubTexture name="OUTLIER idle dance0000" x="0" y="0" width="618" height="625" frameX="0" frameY="13" frameWidth="618" frameHeight="638"/>
+	<SubTexture name="OUTLIER idle dance0001" x="0" y="0" width="618" height="625" frameX="0" frameY="13" frameWidth="618" frameHeight="638"/>
+	<SubTexture name="OUTLIER idle dance0002" x="0" y="0" width="618" height="625" frameX="0" frameY="13" frameWidth="618" frameHeight="638"/>
+	<SubTexture name="OUTLIER idle dance0003" x="0" y="0" width="618" height="625" frameX="0" frameY="13" frameWidth="618" frameHeight="638"/>
+	<SubTexture name="OUTLIER idle dance0004" x="618" y="0" width="618" height="625" frameX="0" frameY="13" frameWidth="618" frameHeight="638"/>
+	<SubTexture name="OUTLIER idle dance0005" x="1236" y="0" width="618" height="625" frameX="0" frameY="13" frameWidth="618" frameHeight="638"/>
+	<SubTexture name="OUTLIER idle dance0006" x="1236" y="0" width="618" height="625" frameX="0" frameY="13" frameWidth="618" frameHeight="638"/>
+	<SubTexture name="OUTLIER idle dance0007" x="1236" y="0" width="618" height="625" frameX="0" frameY="13" frameWidth="618" frameHeight="638"/>
+	<SubTexture name="OUTLIER idle dance0008" x="1236" y="0" width="618" height="625" frameX="0" frameY="13" frameWidth="618" frameHeight="638"/>
+	<SubTexture name="OUTLIER idle dance0009" x="1236" y="0" width="618" height="625" frameX="0" frameY="13" frameWidth="618" frameHeight="638"/>
+	<SubTexture name="OUTLIER idle dance0010" x="1236" y="0" width="618" height="625" frameX="0" frameY="13" frameWidth="618" frameHeight="638"/>
+	<SubTexture name="OUTLIER idle dance0011" x="1236" y="0" width="618" height="625" frameX="0" frameY="13" frameWidth="618" frameHeight="638"/>
+</TextureAtlas>

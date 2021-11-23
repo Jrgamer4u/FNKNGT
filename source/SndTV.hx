@@ -1,7 +1,5 @@
 import h2d.Tweenie.TType;
 
-// praise delahee, i'll figure out what this shit means later!
-
 enum TVVar
 {
 	TVVVolume;
@@ -23,7 +21,7 @@ class TweenV
 	var from:Float;
 	var to:Float;
 	var type:TType;
-	var plays:Int; // -1 = infini, 1 et plus = nombre d'exécutions (1 par défaut)
+	var plays:Int;
 	var varType:TVVar;
 	var onUpdate:Null<TweenV->Void>;
 	var onEnd:Null<TweenV->Void>;
@@ -102,9 +100,6 @@ class TweenV
 	}
 }
 
-/**
- * tween order is not respected
- */
 class SndTV
 {
 	static var DEFAULT_DURATION = DateTools.seconds(1);
@@ -159,7 +154,6 @@ class SndTV
 			tp = TEase;
 
 		{
-			// on supprime les tweens précédents appliqués à la même variable
 			for (t in tlist.backWardIterator())
 				if (t.parent == p && t.varType == vartype)
 				{
@@ -175,18 +169,16 @@ class SndTV
 		var t:TweenV;
 		if (pool.length == 0)
 		{
-			t = new TweenV(p, 0.0, 0.0, vartype, 1 / (duration_ms * fps / 1000), // une seconde
-				from, to, tp, 1, null, null);
+			t = new TweenV(p, 0.0, 0.0, vartype, 1 / (duration_ms * fps / 1000), from, to, tp, 1, null, null);
 		}
 		else
 		{
 			t = pool.pop();
-			t.reset(p, 0.0, 0.0, vartype, 1 / (duration_ms * fps / 1000), // une seconde
-				from, to, tp, 1, null, null);
+			t.reset(p, 0.0, 0.0, vartype, 1 / (duration_ms * fps / 1000), from, to, tp, 1, null, null);
 		}
 
 		if (t.from == t.to)
-			t.ln = 1; // tweening inutile : mais on s'assure ainsi qu'un update() et un end() seront bien appelés
+			t.ln = 1;
 
 		t.man = this;
 		tlist.push(t);
@@ -209,7 +201,6 @@ class SndTV
 		return fastPow3(1 - t) * p0 + 3 * (t * fastPow2(1 - t) * p1 + fastPow2(t) * (1 - t) * p2) + fastPow3(t) * p3;
 	}
 
-	// suppression du tween sans aucun appel aux callbacks onUpdate, onUpdateT et onEnd (!)
 	public function killWithoutCallbacks(parent:Snd)
 	{
 		for (t in tlist.backWardIterator())
@@ -300,14 +291,13 @@ class SndTV
 
 				if (t.ln < 1)
 				{
-					// en cours...
 					var val = t.from + t.n * dist;
 
 					t.apply(val);
 
 					onUpdate(t, t.ln);
 				}
-				else // fini !
+				else
 				{
 					terminateTween(t, true);
 				}

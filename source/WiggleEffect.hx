@@ -1,6 +1,5 @@
 package;
 
-// STOLEN FROM HAXEFLIXEL DEMO LOL
 import flixel.system.FlxAssets.FlxShader;
 
 enum WiggleEffectType
@@ -63,7 +62,6 @@ class WiggleShader extends FlxShader
 {
 	@:glFragmentSource('
 		#pragma header
-		//uniform float tx, ty; // x,y waves phase
 		uniform float uTime;
 		
 		const int EFFECT_TYPE_DREAMY = 0;
@@ -74,19 +72,10 @@ class WiggleShader extends FlxShader
 		
 		uniform int effectType;
 		
-		/**
-		 * How fast the waves move over time
-		 */
 		uniform float uSpeed;
 		
-		/**
-		 * Number of waves over time
-		 */
 		uniform float uFrequency;
 		
-		/**
-		 * How much the pixels are going to stretch over the waves
-		 */
 		uniform float uWaveAmplitude;
 
 		vec2 sineWave(vec2 pt)
@@ -97,12 +86,12 @@ class WiggleShader extends FlxShader
 			if (effectType == EFFECT_TYPE_DREAMY) 
 			{
 				float offsetX = sin(pt.y * uFrequency + uTime * uSpeed) * uWaveAmplitude;
-                pt.x += offsetX; // * (pt.y - 1.0); // <- Uncomment to stop bottom part of the screen from moving
+                pt.x += offsetX;
 			}
 			else if (effectType == EFFECT_TYPE_WAVY) 
 			{
 				float offsetY = sin(pt.x * uFrequency + uTime * uSpeed) * uWaveAmplitude;
-				pt.y += offsetY; // * (pt.y - 1.0); // <- Uncomment to stop bottom part of the screen from moving
+				pt.y += offsetY;
 			}
 			else if (effectType == EFFECT_TYPE_HEAT_WAVE_HORIZONTAL)
 			{

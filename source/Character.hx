@@ -30,7 +30,6 @@ class Character extends FlxSprite
 		switch (curCharacter)
 		{
 			case 'gf':
-				// GIRLFRIEND CODE
 				tex = FlxAtlasFrames.fromSparrow('assets/images/GF_assets.png', 'assets/images/GF_assets.xml');
 				frames = tex;
 				animation.addByPrefix('cheer', 'GF Cheer', 24, false);
@@ -62,7 +61,6 @@ class Character extends FlxSprite
 				playAnim('danceRight');
 
 			case 'fenberry':
-				// fenberry ANIMATION LOADING CODE
 				tex = FlxAtlasFrames.fromSparrow('assets/images/fenberry.png', 'assets/images/fenberry.xml');
 				frames = tex;
 				animation.addByPrefix('idle', 'fenberry idle dance', 24);
@@ -70,6 +68,23 @@ class Character extends FlxSprite
 				animation.addByPrefix('singRIGHT', 'fenberry Sing Note RIGHT', 24);
 				animation.addByPrefix('singDOWN', 'fenberry Sing Note DOWN', 24);
 				animation.addByPrefix('singLEFT', 'fenberry Sing Note LEFT', 24);
+
+				addOffset('idle');
+				addOffset("singUP", -6, 50);
+				addOffset("singRIGHT", 0, 27);
+				addOffset("singLEFT", -10, 10);
+				addOffset("singDOWN", 0, -30);
+
+				playAnim('idle');
+
+			case 'outlier':
+				tex = FlxAtlasFrames.fromSparrow('assets/images/OUTLIER.png', 'assets/images/OUTLIER.xml');
+				frames = tex;
+				animation.addByPrefix('idle', 'OUTLIER idle dance', 24);
+				animation.addByPrefix('singUP', 'OUTLIER Sing Note UP', 24);
+				animation.addByPrefix('singRIGHT', 'OUTLIER Sing Note RIGHT', 24);
+				animation.addByPrefix('singDOWN', 'OUTLIER Sing Note DOWN', 24);
+				animation.addByPrefix('singLEFT', 'OUTLIER Sing Note LEFT', 24);
 
 				addOffset('idle');
 				addOffset("singUP", -6, 50);
@@ -125,15 +140,12 @@ class Character extends FlxSprite
 		{
 			flipX = !flipX;
 
-			// Doesn't flip for BF, since his are already in the right place???
 			if (!curCharacter.startsWith('bf'))
 			{
-				// var animArray
 				var oldRight = animation.getByName('singRIGHT').frames;
 				animation.getByName('singRIGHT').frames = animation.getByName('singLEFT').frames;
 				animation.getByName('singLEFT').frames = oldRight;
 
-				// IF THEY HAVE MISS ANIMATIONS??
 				if (animation.getByName('singRIGHTmiss') != null)
 				{
 					var oldMiss = animation.getByName('singRIGHTmiss').frames;
@@ -153,11 +165,11 @@ class Character extends FlxSprite
 				holdTimer += elapsed;
 			}
 
-			var fenberryVar:Float = 4;
+			var theotheroneVar:Float = 4;
 
-			if (curCharacter == 'fenberry')
-				fenberryVar = 6.1;
-			if (holdTimer >= Conductor.stepCrochet * fenberryVar * 0.001)
+			if (curCharacter == 'theotherone')
+				theotheroneVar = 6.1;
+			if (holdTimer >= Conductor.stepCrochet * theotheroneVar * 0.001)
 			{
 				dance();
 				holdTimer = 0;
@@ -176,9 +188,6 @@ class Character extends FlxSprite
 
 	private var danced:Bool = false;
 
-	/**
-	 * FOR GF DANCING SHIT
-	 */
 	public function dance()
 	{
 		if (!debugMode)

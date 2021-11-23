@@ -1,0 +1,646 @@
+{
+    "song": {
+        "player1": "bf",
+        "sectionLengths": [],
+        "player2": "outlier",
+        "notes": [
+            {
+                "lengthInSteps": 16,
+                "sectionNotes": [],
+                "typeOfSection": 0,
+                "altAnim": false,
+                "mustHitSection": false,
+                "changeBPM": false,
+                "bpm": 200
+            },
+            {
+                "lengthInSteps": 16,
+                "altAnim": false,
+                "typeOfSection": 0,
+                "sectionNotes": [],
+                "bpm": 200,
+                "changeBPM": false,
+                "mustHitSection": true
+            },
+            {
+                "lengthInSteps": 16,
+                "altAnim": false,
+                "typeOfSection": 0,
+                "sectionNotes": [],
+                "bpm": 200,
+                "changeBPM": false,
+                "mustHitSection": true
+            },
+            {
+                "lengthInSteps": 16,
+                "altAnim": false,
+                "typeOfSection": 0,
+                "sectionNotes": [
+                    [
+                        4275,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        4275,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        4500,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        4500,
+                        5,
+                        0,
+                        "normal"
+                    ]
+                ],
+                "bpm": 200,
+                "changeBPM": false,
+                "mustHitSection": true
+            },
+            {
+                "lengthInSteps": 16,
+                "altAnim": false,
+                "typeOfSection": 0,
+                "sectionNotes": [
+                    [
+                        4800,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        4800,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        5025,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        5025,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        5175,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        5175,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        5475,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        5475,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        5850,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        5850,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        5925,
+                        0,
+                        0,
+                        "warning"
+                    ],
+                    [
+                        5925,
+                        4,
+                        0,
+                        "warning"
+                    ]
+                ],
+                "bpm": 200,
+                "changeBPM": false,
+                "mustHitSection": true
+            },
+            {
+                "lengthInSteps": 16,
+                "altAnim": false,
+                "typeOfSection": 0,
+                "sectionNotes": [
+                    [
+                        6000,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        6000,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        6000,
+                        0,
+                        0,
+                        "warning"
+                    ],
+                    [
+                        6075,
+                        0,
+                        0,
+                        "warning"
+                    ],
+                    [
+                        6150,
+                        0,
+                        0,
+                        "warning"
+                    ],
+                    [
+                        6225,
+                        0,
+                        0,
+                        "warning"
+                    ],
+                    [
+                        6225,
+                        4,
+                        0,
+                        "warning"
+                    ],
+                    [
+                        6150,
+                        4,
+                        0,
+                        "warning"
+                    ],
+                    [
+                        6075,
+                        4,
+                        0,
+                        "warning"
+                    ],
+                    [
+                        6000,
+                        4,
+                        0,
+                        "warning"
+                    ],
+                    [
+                        6225,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        6225,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        6525,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        6525,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        6900,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        6900,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        7158.75,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        7158.75,
+                        5,
+                        0,
+                        "normal"
+                    ]
+                ],
+                "bpm": 200,
+                "changeBPM": false,
+                "mustHitSection": true
+            },
+            {
+                "lengthInSteps": 16,
+                "altAnim": false,
+                "typeOfSection": 0,
+                "sectionNotes": [
+                    [
+                        7575,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        7575,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        8025,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        8025,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        8250,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        8250,
+                        5,
+                        0,
+                        "normal"
+                    ]
+                ],
+                "bpm": 200,
+                "changeBPM": false,
+                "mustHitSection": true
+            },
+            {
+                "lengthInSteps": 16,
+                "altAnim": false,
+                "typeOfSection": 0,
+                "sectionNotes": [
+                    [
+                        8700,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        8700,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        9075,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        9075,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        9375,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        9375,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        9450,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        9450,
+                        5,
+                        0,
+                        "normal"
+                    ]
+                ],
+                "bpm": 200,
+                "changeBPM": false,
+                "mustHitSection": true
+            },
+            {
+                "lengthInSteps": 16,
+                "altAnim": false,
+                "typeOfSection": 0,
+                "sectionNotes": [
+                    [
+                        9600,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        9600,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        9750,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        9750,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        10050,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        10050,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        10350,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        10350,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        10725,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        10725,
+                        5,
+                        0,
+                        "normal"
+                    ]
+                ],
+                "bpm": 200,
+                "changeBPM": false,
+                "mustHitSection": true
+            },
+            {
+                "lengthInSteps": 16,
+                "altAnim": false,
+                "typeOfSection": 0,
+                "sectionNotes": [
+                    [
+                        10950,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        10950,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        11175,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        11175,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        11475,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        11475,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        11850,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        11850,
+                        5,
+                        0,
+                        "normal"
+                    ]
+                ],
+                "bpm": 200,
+                "changeBPM": false,
+                "mustHitSection": true
+            },
+            {
+                "lengthInSteps": 16,
+                "altAnim": false,
+                "typeOfSection": 0,
+                "sectionNotes": [
+                    [
+                        12300,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        12300,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        12525,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        12525,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        12975,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        12975,
+                        5,
+                        0,
+                        "normal"
+                    ]
+                ],
+                "bpm": 200,
+                "changeBPM": false,
+                "mustHitSection": true
+            },
+            {
+                "lengthInSteps": 16,
+                "altAnim": false,
+                "typeOfSection": 0,
+                "sectionNotes": [
+                    [
+                        13350,
+                        1,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        13350,
+                        5,
+                        0,
+                        "normal"
+                    ],
+                    [
+                        13575,
+                        1,
+                        750,
+                        "normal"
+                    ],
+                    [
+                        13575,
+                        5,
+                        750,
+                        "normal"
+                    ]
+                ],
+                "bpm": 200,
+                "changeBPM": false,
+                "mustHitSection": true
+            },
+            {
+                "lengthInSteps": 16,
+                "altAnim": false,
+                "typeOfSection": 0,
+                "sectionNotes": [
+                    [
+                        14550,
+                        0,
+                        0,
+                        "warning"
+                    ],
+                    [
+                        14775,
+                        0,
+                        0,
+                        "warning"
+                    ],
+                    [
+                        14700,
+                        0,
+                        0,
+                        "warning"
+                    ],
+                    [
+                        14625,
+                        0,
+                        0,
+                        "warning"
+                    ],
+                    [
+                        14550,
+                        4,
+                        0,
+                        "warning"
+                    ],
+                    [
+                        14625,
+                        4,
+                        0,
+                        "warning"
+                    ],
+                    [
+                        14700,
+                        4,
+                        0,
+                        "warning"
+                    ],
+                    [
+                        14775,
+                        4,
+                        0,
+                        "warning"
+                    ]
+                ],
+                "bpm": 200,
+                "changeBPM": false,
+                "mustHitSection": true
+            }
+        ],
+        "song": "Staaack Theee Stateees",
+        "validScore": true,
+        "sections": 1,
+        "needsVoices": true,
+        "bpm": 200,
+        "speed": 2
+    }
+}

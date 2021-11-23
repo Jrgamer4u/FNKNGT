@@ -12,6 +12,7 @@ class HealthIcon extends FlxSprite
 		antialiasing = true;
 		animation.add('bf', [0, 1], 0, false, isPlayer);
 		animation.add('fenberry', [12, 13], 0, false, isPlayer);
+		animation.add('outlier', [2, 4], 0, false, isPlayer);
 		animation.add('gf', [16], 0, false, isPlayer);
 		animation.play(char);
 		scrollFactor.set();
