@@ -55,9 +55,6 @@
 	<haxelib name="faxe" if='switch'/>
 	<haxelib name="polymod"/>
 
-	<haxelib name="actuate" />
-	<haxelib name="extension-webm" if="desktop" />
-
 	<!-- ______________________________ Haxedefines _____________________________ -->
 
 	<haxedef name="FLX_NO_MOUSE" if="mobile" />
