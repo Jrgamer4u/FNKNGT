@@ -38,7 +38,7 @@ class DialogueBox extends FlxSpriteGroup
 
 		switch (PlayState.SONG.song.toLowerCase())
 		{
-			case 'hell-o':
+			default:
 				FlxG.sound.playMusic(Paths.music('breakfast'), 0);
 				FlxG.sound.music.fadeIn(1, 0, 0.8);
 		}
@@ -60,7 +60,7 @@ class DialogueBox extends FlxSpriteGroup
 		var hasDialog = false;
 		switch (PlayState.SONG.song.toLowerCase())
 		{
-			case 'hell-o':
+			default:
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('dialogueBox');
 				box.animation.addByPrefix('normalOpen', 'Text Box Appear', 24, false);
@@ -81,15 +81,25 @@ class DialogueBox extends FlxSpriteGroup
 			portraitLeft.scrollFactor.set();
 			add(portraitLeft);
 			portraitLeft.visible = false;
-
-			portraitRight = new FlxSprite(0, 40);
-			portraitRight.frames = FlxAtlasFrames.fromSparrow('assets/images/bfPortrait.png', 'assets/images/bfPortrait.xml');
-			portraitRight.animation.addByPrefix('enter', 'BF Portrait Enter', 24, false);
-			portraitRight.updateHitbox();
-			portraitRight.scrollFactor.set();
-			add(portraitRight);
-			portraitRight.visible = false;
 		}
+		else if (PlayState.SONG.song.toLowerCase() == 'outliiier')
+		{
+			portraitLeft = new FlxSprite(240, 40);
+			portraitLeft.frames = FlxAtlasFrames.fromSparrow('assets/images/outlierPortrait.png', 'assets/images/outlierPortrait.xml');
+			portraitLeft.animation.addByPrefix('enter', 'outlier Portrait Enter', 24, false);
+			portraitLeft.updateHitbox();
+			portraitLeft.scrollFactor.set();
+			add(portraitLeft);
+			portraitLeft.visible = false;
+		}
+
+		portraitRight = new FlxSprite(0, 40);
+		portraitRight.frames = FlxAtlasFrames.fromSparrow('assets/images/bfPortrait.png', 'assets/images/bfPortrait.xml');
+		portraitRight.animation.addByPrefix('enter', 'BF Portrait Enter', 24, false);
+		portraitRight.updateHitbox();
+		portraitRight.scrollFactor.set();
+		add(portraitRight);
+		portraitRight.visible = false;
 
 		box.animation.play('normalOpen');
 		box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
@@ -187,7 +197,7 @@ class DialogueBox extends FlxSpriteGroup
 
 		switch (curCharacter)
 		{
-			case 'fenberry':
+			case 'fenberry' | 'outlier':
 				portraitRight.visible = false;
 				if (!portraitLeft.visible)
 				{

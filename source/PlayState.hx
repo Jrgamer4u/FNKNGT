@@ -145,7 +145,9 @@ class PlayState extends MusicBeatState
 		switch (SONG.song.toLowerCase())
 		{
 			case 'hell-o':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('hell-o/hell-oDialogue'));
+				dialogue = CoolUtil.coolTextFile(Paths.txt('hell-o/Dialogue'));
+			case 'outliiier':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('outliiier/Dialogue'));
 		}
 
 		switch (SONG.song.toLowerCase())
