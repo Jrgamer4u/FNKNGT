@@ -1,3 +1,5 @@
+name: learn-github-actions
+on: [push]
 jobs:
   build:
     runs-on: [ubuntu-latest, macos-latest]
