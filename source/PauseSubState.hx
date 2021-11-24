@@ -80,10 +80,6 @@ class PauseSubState extends MusicBeatSubstate
 					FlxG.switchState(new MainMenuState());
 			}
 		}
-
-		if (FlxG.keys.justPressed.J)
-		{
-		}
 	}
 
 	override function destroy()

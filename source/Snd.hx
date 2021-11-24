@@ -245,13 +245,6 @@ class ChannelEventInstance extends Channel
 		var pos:Int = 0;
 		pos = Math.round(posMs);
 		var res = data.setTimelinePosition(pos);
-		if (res != FMOD_OK)
-		{
-		}
-	}
-
-	public override function setNbLoops(nb:Int)
-	{
 	}
 
 	public override function getVolume():Float
@@ -262,9 +255,6 @@ class ChannelEventInstance extends Channel
 		var vol:cpp.Float32 = 0.0;
 		var fvol:cpp.Float32 = 0.0;
 		var res = data.getVolume(Cpp.addr(vol), Cpp.addr(fvol));
-		if (res != FMOD_OK)
-		{
-		}
 		return vol;
 	}
 
@@ -276,12 +266,6 @@ class ChannelEventInstance extends Channel
 		}
 
 		var res = data.setVolume(hxd.Math.clamp(v, 0, 1));
-		if (res != FMOD_OK)
-		{
-		}
-		else
-		{
-		}
 	}
 }
 
@@ -409,9 +393,6 @@ class ChannelLowLevel extends Channel
 		var posU:cpp.UInt32 = 0;
 		posU = Math.round(posMs);
 		var res = data.setPosition(posU, FmodTimeUnit.FTM_MS);
-		if (res != FMOD_OK)
-		{
-		}
 	}
 
 	public override function setNbLoops(nb:Int)
@@ -429,9 +410,6 @@ class ChannelLowLevel extends Channel
 
 		var vol:cpp.Float32 = 0.0;
 		var res = data.getVolume(Cpp.addr(vol));
-		if (res != FMOD_OK)
-		{
-		}
 		return vol;
 	}
 
@@ -444,15 +422,6 @@ class ChannelLowLevel extends Channel
 
 		var vcl = hxd.Math.clamp(v, 0, 1);
 		var res = data.setVolume(vcl);
-		if (res != FMOD_OK)
-		{
-		}
-		else
-		{
-			if (isDebug)
-			{
-			}
-		}
 	}
 }
 
@@ -540,9 +509,6 @@ class SoundLowLevel extends Sound
 
 		var pos:cpp.UInt32 = 0;
 		var res = data.getLength(Cpp.addr(pos), FmodTimeUnit.FTM_MS);
-		if (res != FMOD_OK)
-		{
-		}
 		var posF = 1.0 * pos / 1000.0;
 		return posF;
 	}
@@ -607,9 +573,6 @@ class SoundEvent extends Sound
 
 		var pos:Int = 0;
 		var res = data.getLength(Cpp.addr(pos));
-		if (res != FMOD_OK)
-		{
-		}
 		var posF = 1.0 * pos / 1000.0;
 		return posF;
 	}
@@ -760,13 +723,6 @@ class Snd
 
 		PLAYING.push(this);
 		curPlay = sound.play(startOffsetMs, loops, getRealVolume());
-
-		if (curPlay == null)
-		{
-		}
-		else
-		{
-		}
 	}
 
 	public function startNoStop(?loops:Int = 0, ?vol:Float = 1.0, ?startOffsetMs:Float = 0.0):Null<Channel>
@@ -820,9 +776,6 @@ class Snd
 		var v2p:cpp.Pointer<Int> = Cpp.addr(v2);
 		var str = "";
 		var res = fmodSystem.getSoundRAM(v0p, v1p, v2p);
-		if (res != FMOD_OK)
-		{
-		}
 
 		inline function f(val:Float):Float
 		{
@@ -894,18 +847,6 @@ class Snd
 	public function fadePlay(?fadeDuration = 100, ?endVolume:Float = 1.0)
 	{
 		var p = play(0.0001);
-		if (p == null)
-		{
-		}
-		else
-		{
-			if (p.curPlay == null)
-			{
-			}
-			else
-			{
-			}
-		}
 		tweenVolume(endVolume, fadeDuration);
 		return p;
 	}
@@ -997,9 +938,6 @@ class Snd
 			var vol = getRealVolume();
 			curPlay.setVolume(vol);
 		}
-		else
-		{
-		}
 	}
 
 	public function setPlayCursorSec(pos:Float)
@@ -1008,18 +946,12 @@ class Snd
 		{
 			curPlay.setPlayCursorSec(pos);
 		}
-		else
-		{
-		}
 	}
 
 	public function setPlayCursorMs(pos:Float)
 	{
 		if (curPlay != null)
 			curPlay.setPlayCursorMs(pos);
-		else
-		{
-		}
 	}
 
 	public function tweenVolume(v:Float, ?easing:h2d.Tweenie.TType, ?milliseconds:Float = 100):TweenV
@@ -1118,11 +1050,6 @@ class Snd
 
 		var snd:cpp.RawPointer<faxe.Faxe.FmodSound> = cast null;
 		var sndR:cpp.RawPointer<cpp.RawPointer<faxe.Faxe.FmodSound>> = cpp.RawPointer.addressOf(snd);
-
-		#if switch
-		if (!path.startsWith("rom:"))
-			path = "rom://" + path;
-		#end
 
 		var res:FmodResult = fmodSystem.createSound(Cpp.cstring(path), mode, Cpp.nullptr(), sndR);
 

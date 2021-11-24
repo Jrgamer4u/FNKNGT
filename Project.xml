@@ -2,12 +2,7 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="FNKNGT" file="FNKNGT" packageName="com.ninjamuffin99.funkin" main="Main" version="0.6.1" company="OuBoRe" />
-
-	<set name="APP_ID" value="0x0100f6c013bbc000" />
-	<app preloader="flixel.system.FlxPreloader" />
-
-	<set name="SWF_VERSION" value="11.8" />
+	<app title="FNKNGT" file="FNKNGT" packageName="com.gmail.ouboreteam.fnkngt" main="Main" version="0.6.1" company="OuBoRe Team" />
 
 	<!-- ____________________________ Window Settings ___________________________ -->
 
@@ -18,8 +13,6 @@
 	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" vsync="false"/>
 
 	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" />
-
-	<window if="switch" orientation="landscape" fullscreen="true" width="0" height="0" resizable="true" />
 
 	<!-- _____________________________ Path Settings ____________________________ -->
 
@@ -51,7 +44,6 @@
 	<haxelib name="hscript" />
 
 	<haxelib name="flixel-ui" />
-	<haxelib name="faxe" if='switch'/>
 	<haxelib name="polymod"/>
 
 	<!-- ______________________________ Haxedefines _____________________________ -->

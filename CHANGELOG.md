@@ -1,6 +1,22 @@
 # Changelog
 All notable changes will be documented in this file.
 
+## [0.6.2] - 2021-11-24
+### Note
+- This version is Github Only, The GameBanana version will be updated when 0.7 is out.
+### Removed
+- Discord stuff
+- More Unused import stuff
+- Code that effects nothing
+- The abillity to compile the Switch Version (lmao)
+- The itch.io compilers
+- Support for Haxe under 4.0.0
+- Preloader
+- Apple ID
+### Other Changes
+- Modified the setup.bat file
+- Modified the Readme file
+
 ## [0.6.1] - 2021-11-23
 ### Note
 - This version is Github Only, The GameBanana version will be updated when 0.7 is out.
