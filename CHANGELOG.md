@@ -1,6 +1,15 @@
 # Changelog
 All notable changes will be documented in this file.
 
+## [0.6.2b] - 2021-11-24
+### Whoops
+#### Fixed
+- Week Unlockage
+### Changed
+- Roaming Location to be outside Funkin'
+### Added
+- Hxcpp stuff ig
+
 ## [0.6.2] - 2021-11-24
 ### Note
 - This version is Github Only, The GameBanana version will be updated when 0.7 is out.

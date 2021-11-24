@@ -2,7 +2,7 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="FNKNGT" file="FNKNGT" packageName="com.gmail.ouboreteam.fnkngt" main="Main" version="0.6.1" company="OuBoRe Team" />
+	<app title="FNKNGT" file="FNKNGT" packageName="com.gmail.ouboreteam.fnkngt" main="Main" version="0.6.2b" company="OuBoRe Team" />
 
 	<!-- ____________________________ Window Settings ___________________________ -->
 
@@ -45,6 +45,7 @@
 
 	<haxelib name="flixel-ui" />
 	<haxelib name="polymod"/>
+	<haxelib name="hxcpp-debug-server" if="desktop"/>
 
 	<!-- ______________________________ Haxedefines _____________________________ -->
 

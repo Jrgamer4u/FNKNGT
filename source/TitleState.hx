@@ -31,8 +31,6 @@ class TitleState extends MusicBeatState
 	var textGroup:FlxGroup;
 	var ngSpr:FlxSprite;
 
-	var curWacky:Array<String> = [];
-
 	var wackyImage:FlxSprite;
 
 	override public function create():Void
@@ -47,7 +45,7 @@ class TitleState extends MusicBeatState
 
 		super.create();
 
-		FlxG.save.bind('funkin', 'ninjamuffin99');
+		FlxG.save.bind('FNKNGT', 'OuBoRe');
 
 		Highscore.load();
 
@@ -55,17 +53,23 @@ class TitleState extends MusicBeatState
 		{
 			StoryMenuState.weekUnlocked = FlxG.save.data.weekUnlocked;
 
-			if (StoryMenuState.weekUnlocked.length < 0)
-				StoryMenuState.weekUnlocked.insert(0, false);
+			if (StoryMenuState.weekUnlocked.length < 4)
+				StoryMenuState.weekUnlocked.insert(0, true);
 
 			if (!StoryMenuState.weekUnlocked[0])
 				StoryMenuState.weekUnlocked[0] = true;
 		}
 
+		#if FREEPLAY
+		FlxG.switchState(new FreeplayState());
+		#elseif CHARTING
+		FlxG.switchState(new ChartingState());
+		#else
 		new FlxTimer().start(1, function(tmr:FlxTimer)
 		{
 			startIntro();
 		});
+		#end
 	}
 
 	var logoBl:FlxSprite;

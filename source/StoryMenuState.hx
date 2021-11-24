@@ -23,7 +23,7 @@ class StoryMenuState extends MusicBeatState
 	];
 	var curDifficulty:Int = 0;
 
-	public static var weekUnlocked:Array<Bool> = [];
+	public static var weekUnlocked:Array<Bool> = [true, false];
 
 	var weekCharacters:Array<Dynamic> = [['outlier', 'bf', 'gf'], ['fenberry', 'bf', 'gf']];
 
