@@ -12,7 +12,6 @@ haxelib install flixel-addons
 haxelib git flixel-addons https://github.com/HaxeFlixel/flixel-addons
 haxelib install flixel-ui
 haxelib install hscript
-haxelib install newgrounds
 haxelib run lime setup
 haxelib install flixel-tools
 title FNF Setup - User action required

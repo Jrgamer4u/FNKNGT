@@ -11,7 +11,6 @@ import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
-import io.newgrounds.NG;
 import lime.app.Application;
 
 using StringTools;
@@ -86,6 +85,13 @@ class MainMenuState extends MusicBeatState
 		}
 
 		FlxG.camera.follow(camFollow, null, 0.06);
+
+		var reuploadEdgeCase:FlxText = new FlxText(10, FlxG.height - 175, 0,
+			"download FNKNGT at https://github.com/Jrgamer4u/FNKNGT \ndownload FNKNGT at https://gamebanana.com/mods/336029 \ndownload vanilla Funkin at https://github.com/ninjamuffin99/Funkin \nplay vanilla Funkin at https://www.newgrounds.com/portal/view/770371 \n\nif you make a single penny you are going to the wall of shame /j\n",
+			24);
+		reuploadEdgeCase.scrollFactor.set();
+		reuploadEdgeCase.setFormat("VCR OSD Mono", 24, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		add(reuploadEdgeCase);
 
 		var versionShit:FlxText = new FlxText(5, FlxG.height - 18, 0, "v" + Application.current.meta.get('version'), 12);
 		versionShit.scrollFactor.set();

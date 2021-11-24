@@ -24,8 +24,6 @@ class Channel
 
 	public function poolBack()
 	{
-		#if false
-		#end
 		started = false;
 		paused = false;
 		disposed = true;
@@ -69,8 +67,6 @@ class Channel
 	public function onComplete()
 	{
 		completed = true;
-		#if !prod
-		#end
 		if (onEnd != null)
 		{
 			var cb = onEnd;
@@ -81,16 +77,6 @@ class Channel
 
 	public function isComplete()
 	{
-		#if !prod
-		if (completed)
-		{
-		}
-
-		if (started)
-		{
-		}
-		#end
-
 		return completed || (started && !isPlaying());
 	}
 
@@ -225,8 +211,6 @@ class ChannelEventInstance extends Channel
 
 		var b:Bool = false;
 		data.getPaused(Cpp.addr(b));
-		#if !prod
-		#end
 		return !b;
 	}
 
@@ -263,12 +247,7 @@ class ChannelEventInstance extends Channel
 		var res = data.setTimelinePosition(pos);
 		if (res != FMOD_OK)
 		{
-			#if debug
-			#end
 		}
-
-		#if debug
-		#end
 	}
 
 	public override function setNbLoops(nb:Int)
@@ -285,8 +264,6 @@ class ChannelEventInstance extends Channel
 		var res = data.getVolume(Cpp.addr(vol), Cpp.addr(fvol));
 		if (res != FMOD_OK)
 		{
-			#if debug
-			#end
 		}
 		return vol;
 	}
@@ -565,8 +542,6 @@ class SoundLowLevel extends Sound
 		var res = data.getLength(Cpp.addr(pos), FmodTimeUnit.FTM_MS);
 		if (res != FMOD_OK)
 		{
-			#if debug
-			#end
 		}
 		var posF = 1.0 * pos / 1000.0;
 		return posF;
@@ -576,9 +551,6 @@ class SoundLowLevel extends Sound
 	{
 		var nativeChan:FmodChannelRef = FaxeRef.playSoundWithHandle(data, false);
 		var chan = ChannelLowLevel.alloc(nativeChan, name);
-
-		#if debug
-		#end
 
 		@:privateAccess chan.started = true;
 		@:privateAccess chan.completed = false;
@@ -717,8 +689,6 @@ class Snd
 			curPlay.dispose();
 			curPlay.poolBack();
 			curPlay = null;
-			#if !prod
-			#end
 		}
 	}
 
@@ -984,8 +954,6 @@ class Snd
 	{
 		if (curPlay == null)
 		{
-			#if !prod
-			#end
 			return false;
 		}
 		return curPlay.isPlaying();
@@ -1090,8 +1058,6 @@ class Snd
 
 	static var _stop = function(t:TweenV)
 	{
-		#if !prod
-		#end
 		t.parent.stop();
 	}
 
@@ -1201,8 +1167,6 @@ class Snd
 			var t0 = haxe.Timer.stamp();
 			ev.loadSampleData();
 			var t1 = haxe.Timer.stamp();
-			#if debug
-			#end
 		}
 
 		return new SoundEvent(ev, path);
@@ -1272,8 +1236,6 @@ class Snd
 		for (p in PLAYING.backWardIterator())
 			if (p.isComplete())
 			{
-				#if !prod
-				#end
 				p.onComplete();
 			}
 		TW.update();
@@ -1318,8 +1280,6 @@ class Snd
 		}
 
 		var t1 = haxe.Timer.stamp();
-		#if debug
-		#end
 		return cast fbank;
 	}
 }

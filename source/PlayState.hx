@@ -2,7 +2,6 @@ package;
 
 import Section.SwagSection;
 import Song.SwagSong;
-import WiggleEffect.WiggleEffectType;
 import flixel.FlxBasic;
 import flixel.FlxCamera;
 import flixel.FlxG;
@@ -51,6 +50,8 @@ class PlayState extends MusicBeatState
 	public static var storyDifficulty:Int = 1;
 
 	var halloweenLevel:Bool = false;
+
+	var reuploadWatermark:FlxText;
 
 	private var vocals:FlxSound;
 
@@ -104,8 +105,6 @@ class PlayState extends MusicBeatState
 	var upperBoppers:FlxSprite;
 	var bottomBoppers:FlxSprite;
 	var santa:FlxSprite;
-
-	var wiggleShit:WiggleEffect = new WiggleEffect();
 
 	var talking:Bool = true;
 	var songScore:Int = 0;
@@ -294,8 +293,18 @@ class PlayState extends MusicBeatState
 		healthBar.createFilledBar(0xFFFF0000, 0xFF66FF33);
 		add(healthBar);
 
-		scoreTxt = new FlxText(healthBarBG.x + healthBarBG.width - 190, healthBarBG.y + 30, 0, "", 20);
-		scoreTxt.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT);
+		reuploadWatermark = new FlxText((FlxG.width / 2), (FlxG.height / 2), 0,
+			"download FNKNGT at https://github.com/Jrgamer4u/FNKNGT \ndownload FNKNGT at https://gamebanana.com/mods/336029 \ndownload vanilla Funkin at https://github.com/ninjamuffin99/Funkin \nplay vanilla Funkin at https://www.newgrounds.com/portal/view/770371 \n",
+			12);
+		reuploadWatermark.setPosition((FlxG.width / 2) - (reuploadWatermark.width / 2), (FlxG.height / 2) + 50);
+		reuploadWatermark.scrollFactor.set();
+		reuploadWatermark.setFormat(Paths.font("vcr.ttf"), 12, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		add(reuploadWatermark);
+		reuploadWatermark.visible = true;
+
+		scoreTxt = new FlxText(FlxG.width / 2 - 235, healthBarBG.y + 50, 0, "", 20);
+		scoreTxt.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		scoreTxt.screenCenter(X);
 		scoreTxt.scrollFactor.set();
 		add(scoreTxt);
 
@@ -315,6 +324,7 @@ class PlayState extends MusicBeatState
 		iconP2.cameras = [camHUD];
 		scoreTxt.cameras = [camHUD];
 		doof.cameras = [camHUD];
+		reuploadWatermark.cameras = [camHUD];
 
 		startingSong = true;
 
@@ -1485,7 +1495,6 @@ class PlayState extends MusicBeatState
 			if (SONG.notes[Math.floor(curStep / 16)].mustHitSection)
 				theotherone.dance();
 		}
-		wiggleShit.update(Conductor.crochet);
 
 		if (camZooming && FlxG.camera.zoom < 1.35 && curBeat % 4 == 0)
 		{
@@ -1512,6 +1521,15 @@ class PlayState extends MusicBeatState
 		if (curBeat % 16 == 15)
 		{
 			boyfriend.playAnim('hey', true);
+		}
+
+		if (curBeat % 16 == 15)
+		{
+			reuploadWatermark.visible = true;
+		}
+		else if (curBeat % 8 == 7)
+		{
+			reuploadWatermark.visible = false;
 		}
 
 		switch (curStage)

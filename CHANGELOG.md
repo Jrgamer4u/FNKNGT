@@ -1,6 +1,19 @@
 # Changelog
 All notable changes will be documented in this file.
 
+## [0.6.1] - 2021-11-23
+### Note
+- This version is Github Only, The GameBanana version will be updated when 0.7 is out.
+### Added
+- Watermark (Better to be safe then sorry)
+### Removed
+- Newgrounds
+- Unused import stuff
+- Unnecessary art stuff
+- NGio.hx
+- OverlayShader.hx
+- WiggleEffect.hx
+
 ## [0.6.0] - 2021-11-22
 ### Added
 - outlier

@@ -2,7 +2,7 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="FNKNGT" file="FNKNGT" packageName="com.ninjamuffin99.funkin" main="Main" version="0.6" company="OuBoRe" />
+	<app title="FNKNGT" file="FNKNGT" packageName="com.ninjamuffin99.funkin" main="Main" version="0.6.1" company="OuBoRe" />
 
 	<set name="APP_ID" value="0x0100f6c013bbc000" />
 	<app preloader="flixel.system.FlxPreloader" />
@@ -51,7 +51,6 @@
 	<haxelib name="hscript" />
 
 	<haxelib name="flixel-ui" />
-	<haxelib name="newgrounds"/>
 	<haxelib name="faxe" if='switch'/>
 	<haxelib name="polymod"/>
 
@@ -72,7 +71,5 @@
 	<icon path="art/icon16.png" size='16'/>
 	<icon path="art/icon32.png" size='32'/>
 	<icon path="art/icon64.png" size='64'/>
-
-	<haxedef name="NG_LOGIN" if="newgrounds" />
 	
 </project>
