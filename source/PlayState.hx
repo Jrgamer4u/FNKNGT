@@ -467,7 +467,7 @@ class PlayState extends MusicBeatState
 		lastReportedPlayheadPosition = 0;
 
 		if (!paused)
-			FlxG.sound.playMusic("assets/music/" + SONG.song + "_Inst" + TitleState.soundExt, 1, false);
+			FlxG.sound.playMusic(Paths.inst(SONG.song), 1, false);
 		FlxG.sound.music.onComplete = endSong;
 		vocals.play();
 	}
@@ -482,7 +482,7 @@ class PlayState extends MusicBeatState
 		curSong = songData.song;
 
 		if (SONG.needsVoices)
-			vocals = new FlxSound().loadEmbedded("assets/music/" + curSong + "_Voices" + TitleState.soundExt);
+			vocals = new FlxSound().loadEmbedded(Paths.voices(curSong));
 		else
 			vocals = new FlxSound();
 
@@ -796,13 +796,13 @@ class PlayState extends MusicBeatState
 		if (controls.RESET)
 		{
 			health = 0;
-			trace("RESET = True");
+			FlxG.log.add("RESET = True");
 		}
 
 		if (controls.CHEAT)
 		{
 			health += 1;
-			trace("User is cheating!");
+			FlxG.log.add("User is cheating!");
 		}
 
 		if (health <= 0)
@@ -960,8 +960,8 @@ class PlayState extends MusicBeatState
 			{
 				var difficulty:String = "";
 
-				trace('LOADING NEXT SONG');
-				trace(PlayState.storyPlaylist[0].toLowerCase() + difficulty);
+				FlxG.log.add('LOADING NEXT SONG');
+				FlxG.log.add(PlayState.storyPlaylist[0].toLowerCase() + difficulty);
 
 				FlxTransitionableState.skipNextTransIn = true;
 				FlxTransitionableState.skipNextTransOut = true;
@@ -975,7 +975,7 @@ class PlayState extends MusicBeatState
 		}
 		else
 		{
-			trace('WENT BACK TO FREEPLAY??');
+			FlxG.log.add('WENT BACK TO FREEPLAY??');
 			FlxG.switchState(new FreeplayState());
 		}
 	}

@@ -29,7 +29,7 @@ class Character extends FlxSprite
 		switch (curCharacter)
 		{
 			case 'gf':
-				tex = FlxAtlasFrames.fromSparrow('assets/images/GF_assets.png', 'assets/images/GF_assets.xml');
+				tex = Paths.getSparrowAtlas('GF_assets');
 				frames = tex;
 				animation.addByPrefix('cheer', 'GF Cheer', 24, false);
 				animation.addByPrefix('singLEFT', 'GF left note', 24, false);
@@ -60,7 +60,7 @@ class Character extends FlxSprite
 				playAnim('danceRight');
 
 			case 'fenberry':
-				tex = FlxAtlasFrames.fromSparrow('assets/images/fenberry.png', 'assets/images/fenberry.xml');
+				tex = Paths.getSparrowAtlas('fenberry.png');
 				frames = tex;
 				animation.addByPrefix('idle', 'fenberry idle dance', 24);
 				animation.addByPrefix('singUP', 'fenberry Sing Note UP', 24);
@@ -77,7 +77,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 			case 'outlier':
-				tex = FlxAtlasFrames.fromSparrow('assets/images/OUTLIER.png', 'assets/images/OUTLIER.xml');
+				tex = Paths.getSparrowAtlas('OUTLIER');
 				frames = tex;
 				animation.addByPrefix('idle', 'OUTLIER idle dance', 24);
 				animation.addByPrefix('singUP', 'OUTLIER Sing Note UP', 24);
@@ -94,7 +94,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 			case 'bf':
-				var tex = FlxAtlasFrames.fromSparrow('assets/images/BOYFRIEND.png', 'assets/images/BOYFRIEND.xml');
+				var tex = Paths.getSparrowAtlas('BOYFRIEND');
 				frames = tex;
 				animation.addByPrefix('idle', 'BF idle dance', 24, false);
 				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);

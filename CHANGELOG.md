@@ -1,6 +1,10 @@
 # Changelog
 All notable changes will be documented in this file.
 
+## [0.6.3-EARLY] 2021-11-25
+### Changed
+- file locations to use Paths.hx
+
 ## [0.6.2b] - 2021-11-24
 ### Note
 - This version is Github Only, The GameBanana version will be updated when 0.7 is out.

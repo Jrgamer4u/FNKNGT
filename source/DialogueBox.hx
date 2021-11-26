@@ -74,12 +74,12 @@ class DialogueBox extends FlxSpriteGroup
 
 		if (PlayState.SONG.song.toLowerCase() == 'hell-o')
 		{
-			portraitLeft.frames = FlxAtlasFrames.fromSparrow('assets/images/fenberryPortrait.png', 'assets/images/fenberryPortrait.xml');
+			portraitLeft.frames = Paths.getSparrowAtlas('fenberryPortrait');
 			portraitLeft.animation.addByPrefix('enter', 'fenberry Portrait Enter', 24, false);
 		}
 		else if (PlayState.SONG.song.toLowerCase() == 'outliiier')
 		{
-			portraitLeft.frames = FlxAtlasFrames.fromSparrow('assets/images/outlierPortrait.png', 'assets/images/outlierPortrait.xml');
+			portraitLeft.frames = Paths.getSparrowAtlas('outlierPortrait');
 			portraitLeft.animation.addByPrefix('enter', 'outlier Portrait Enter', 24, false);
 		}
 		portraitLeft.updateHitbox();
@@ -88,7 +88,7 @@ class DialogueBox extends FlxSpriteGroup
 		portraitLeft.visible = false;
 
 		portraitRight = new FlxSprite(0, 40);
-		portraitRight.frames = FlxAtlasFrames.fromSparrow('assets/images/bfPortrait.png', 'assets/images/bfPortrait.xml');
+		portraitRight.frames = Paths.getSparrowAtlas('bfPortrait.png');
 		portraitRight.animation.addByPrefix('enter', 'BF Portrait Enter', 24, false);
 		portraitRight.updateHitbox();
 		portraitRight.scrollFactor.set();
