@@ -2,3 +2,6 @@ bf
 gf
 fenberry
 outlier
+playerstg1
+playerstg2
+playerstg3

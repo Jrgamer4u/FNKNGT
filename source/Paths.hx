@@ -76,14 +76,14 @@ class Paths
 		return getPath('music/$key.$SOUND_EXT', MUSIC, library);
 	}
 
-	inline static public function voices(song:String)
+	inline static public function voices(song:String, ?library:String)
 	{
-		return 'songs:assets/songs/${song.toLowerCase()}_Voices.$SOUND_EXT';
+		return getPath('music/${song}_Voices.$SOUND_EXT', MUSIC, library);
 	}
 
-	inline static public function inst(song:String)
+	inline static public function inst(song:String, ?library:String)
 	{
-		return 'songs:assets/songs/${song.toLowerCase()}_Inst.$SOUND_EXT';
+		return getPath('music/${song}_Inst.$SOUND_EXT', MUSIC, library);
 	}
 
 	inline static public function image(key:String, ?library:String)
@@ -91,9 +91,9 @@ class Paths
 		return getPath('images/$key.png', IMAGE, library);
 	}
 
-	inline static public function font(key:String)
+	inline static public function font(key:String, ?library:String)
 	{
-		return 'assets/fonts/$key';
+		return getPath('fonts/$key', FONT, library);
 	}
 
 	inline static public function getSparrowAtlas(key:String, ?library:String)

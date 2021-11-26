@@ -3,7 +3,6 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.text.FlxTypeText;
-import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxSpriteGroup;
 import flixel.text.FlxText;
 import flixel.util.FlxTimer;
@@ -88,7 +87,7 @@ class DialogueBox extends FlxSpriteGroup
 		portraitLeft.visible = false;
 
 		portraitRight = new FlxSprite(0, 40);
-		portraitRight.frames = Paths.getSparrowAtlas('bfPortrait.png');
+		portraitRight.frames = Paths.getSparrowAtlas('bfPortrait');
 		portraitRight.animation.addByPrefix('enter', 'BF Portrait Enter', 24, false);
 		portraitRight.updateHitbox();
 		portraitRight.scrollFactor.set();

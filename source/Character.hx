@@ -60,7 +60,7 @@ class Character extends FlxSprite
 				playAnim('danceRight');
 
 			case 'fenberry':
-				tex = Paths.getSparrowAtlas('fenberry.png');
+				tex = Paths.getSparrowAtlas('fenberry');
 				frames = tex;
 				animation.addByPrefix('idle', 'fenberry idle dance', 24);
 				animation.addByPrefix('singUP', 'fenberry Sing Note UP', 24);
@@ -131,6 +131,24 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 				flipX = true;
+
+			default:
+				trace("NOT FOUND, SETTING TO FENBERRY");
+				tex = Paths.getSparrowAtlas('fenberry');
+				frames = tex;
+				animation.addByPrefix('idle', 'fenberry idle dance', 24);
+				animation.addByPrefix('singUP', 'fenberry Sing Note UP', 24);
+				animation.addByPrefix('singRIGHT', 'fenberry Sing Note RIGHT', 24);
+				animation.addByPrefix('singDOWN', 'fenberry Sing Note DOWN', 24);
+				animation.addByPrefix('singLEFT', 'fenberry Sing Note LEFT', 24);
+
+				addOffset('idle');
+				addOffset("singUP", -6, 50);
+				addOffset("singRIGHT", 0, 27);
+				addOffset("singLEFT", -10, 10);
+				addOffset("singDOWN", 0, -30);
+
+				playAnim('idle');
 		}
 
 		dance();

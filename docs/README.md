@@ -21,8 +21,6 @@ Use the setup.bat included in the project.
 
 NOTE: If you see any messages relating to deprecated packages, ignore them. They're just warnings that don't affect compiling
 
-NOTE: FNKNGT Has no Apple ID because Apple is confusing and I'm gonna predict that it will take 7 hours to setup
-
 Once you have all those installed, it's pretty easy to compile the game.
 You just need to run `lime test html5 -debug` in the root of the project to build and run the HTML5 version.
 

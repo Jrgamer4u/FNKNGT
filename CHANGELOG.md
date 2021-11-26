@@ -1,9 +1,10 @@
 # Changelog
 All notable changes will be documented in this file.
 
-## [0.6.3-EARLY] 2021-11-25
+## [0.6.3] 2021-11-25
 ### Changed
 - file locations to use Paths.hx
+- go go go thing
 
 ## [0.6.2b] - 2021-11-24
 ### Note
@@ -27,7 +28,7 @@ All notable changes will be documented in this file.
 - The itch.io compilers
 - Support for Haxe under 4.0.0
 - Preloader
-- Apple ID
+- Application ID
 ### Other Changes
 - Modified the setup.bat file
 - Modified the Readme file
