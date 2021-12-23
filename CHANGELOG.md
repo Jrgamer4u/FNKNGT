@@ -1,7 +1,18 @@
 # Changelog
 All notable changes will be documented in this file.
 
-## [0.6.3] 2021-11-25
+## [0.7.0] - 2021-12-22
+### Added
+- Player
+### Modified
+- Some of the source
+- Resolution
+### Removed
+- Unused Songs
+
+## [0.6.3] - 2021-11-25
+### Note
+- This version is Github Only, The GameBanana version will be updated when 0.7 is out.
 ### Changed
 - file locations to use Paths.hx
 - go go go thing

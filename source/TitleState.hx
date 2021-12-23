@@ -52,7 +52,7 @@ class TitleState extends MusicBeatState
 			StoryMenuState.weekUnlocked = FlxG.save.data.weekUnlocked;
 
 			if (StoryMenuState.weekUnlocked.length < 4)
-				StoryMenuState.weekUnlocked.insert(0, true);
+				StoryMenuState.weekUnlocked.insert(0, false);
 
 			if (!StoryMenuState.weekUnlocked[0])
 				StoryMenuState.weekUnlocked[0] = true;

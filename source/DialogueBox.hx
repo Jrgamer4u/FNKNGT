@@ -45,12 +45,12 @@ class DialogueBox extends FlxSpriteGroup
 		bgFade.alpha = 0;
 		add(bgFade);
 
-		new FlxTimer().start(0.83, function(tmr:FlxTimer)
+		new FlxTimer().start(1, function(tmr:FlxTimer)
 		{
-			bgFade.alpha += (1 / 5) * 0.7;
+			bgFade.alpha += (1 / 10) * 0.7;
 			if (bgFade.alpha > 0.7)
 				bgFade.alpha = 0.7;
-		}, 5);
+		}, 10);
 
 		box = new FlxSprite(-20, 45);
 
@@ -81,6 +81,16 @@ class DialogueBox extends FlxSpriteGroup
 			portraitLeft.frames = Paths.getSparrowAtlas('outlierPortrait');
 			portraitLeft.animation.addByPrefix('enter', 'outlier Portrait Enter', 24, false);
 		}
+		else if (PlayState.SONG.song.toLowerCase() == 'copycat')
+		{
+			portraitLeft.frames = Paths.getSparrowAtlas('playerstg1Portrait');
+			portraitLeft.animation.addByPrefix('enter', 'playerstg1 Portrait Enter', 24, false);
+		}
+		else if (PlayState.SONG.song.toLowerCase() == 'end1')
+		{
+			portraitLeft.frames = Paths.getSparrowAtlas('playerstg3Portrait');
+			portraitLeft.animation.addByPrefix('enter', 'playerstg3 Portrait Enter', 24, false);
+		}
 		portraitLeft.updateHitbox();
 		portraitLeft.scrollFactor.set();
 		add(portraitLeft);
@@ -95,19 +105,19 @@ class DialogueBox extends FlxSpriteGroup
 		portraitRight.visible = false;
 
 		box.animation.play('normalOpen');
-		box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.9));
+		box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 1.8));
 		box.updateHitbox();
 		add(box);
 
 		box.screenCenter(X);
 		portraitLeft.screenCenter(X);
 
-		dropText = new FlxText(242, 502, Std.int(FlxG.width * 0.6), "", 32);
+		dropText = new FlxText(26, 1002, Std.int(FlxG.width * 0.9), "", 32);
 		dropText.font = 'Pixel Arial 11 Bold';
 		dropText.color = 0xFF949494;
 		add(dropText);
 
-		swagDialogue = new FlxTypeText(240, 500, Std.int(FlxG.width * 0.6), "", 32);
+		swagDialogue = new FlxTypeText(24, 1000, Std.int(FlxG.width * 0.9), "", 32);
 		swagDialogue.font = 'Pixel Arial 11 Bold';
 		swagDialogue.color = 0xFF212121;
 		swagDialogue.sounds = [FlxG.sound.load(Paths.sound('pixelText'), 0.6)];

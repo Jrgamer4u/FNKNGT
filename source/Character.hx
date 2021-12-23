@@ -93,6 +93,63 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
+			case 'playerstg1':
+				var tex = Paths.getSparrowAtlas('playerstg1');
+				frames = tex;
+				animation.addByPrefix('idle', 'idle dance', 12, false);
+				animation.addByPrefix('singUP', 'NOTE UP', 12, false);
+				animation.addByPrefix('singLEFT', 'NOTE LEFT', 12, false);
+				animation.addByPrefix('singRIGHT', 'NOTE RIGHT', 12, false);
+				animation.addByPrefix('singDOWN', 'NOTE DOWN', 12, false);
+
+				addOffset('idle', -5);
+				addOffset("singUP", -29, 27);
+				addOffset("singRIGHT", -38, -7);
+				addOffset("singLEFT", 12, -6);
+				addOffset("singDOWN", -10, -50);
+
+				playAnim('idle');
+
+				flipX = true;
+
+			case 'playerstg2':
+				var tex = Paths.getSparrowAtlas('playerstg2');
+				frames = tex;
+				animation.addByPrefix('idle', 'idle dance', 12, false);
+				animation.addByPrefix('singUP', 'NOTE UP', 12, false);
+				animation.addByPrefix('singLEFT', 'NOTE LEFT', 12, false);
+				animation.addByPrefix('singRIGHT', 'NOTE RIGHT', 12, false);
+				animation.addByPrefix('singDOWN', 'NOTE DOWN', 12, false);
+
+				addOffset('idle', -5);
+				addOffset("singUP", -29, 27);
+				addOffset("singRIGHT", -38, -7);
+				addOffset("singLEFT", 12, -6);
+				addOffset("singDOWN", -10, -50);
+
+				playAnim('idle');
+
+				flipX = true;
+
+			case 'playerstg3':
+				var tex = Paths.getSparrowAtlas('playerstg3');
+				frames = tex;
+				animation.addByPrefix('idle', 'idle dance', 12, false);
+				animation.addByPrefix('singUP', 'NOTE UP', 12, false);
+				animation.addByPrefix('singLEFT', 'NOTE LEFT', 12, false);
+				animation.addByPrefix('singRIGHT', 'NOTE RIGHT', 12, false);
+				animation.addByPrefix('singDOWN', 'NOTE DOWN', 12, false);
+
+				addOffset('idle', -5);
+				addOffset("singUP", -29, 27);
+				addOffset("singRIGHT", -38, -7);
+				addOffset("singLEFT", 12, -6);
+				addOffset("singDOWN", -10, -50);
+
+				playAnim('idle');
+
+				flipX = true;
+
 			case 'bf':
 				var tex = Paths.getSparrowAtlas('BOYFRIEND');
 				frames = tex;

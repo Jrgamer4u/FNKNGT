@@ -74,8 +74,9 @@ class PlayState extends MusicBeatState
 	private var camGame:FlxCamera;
 
 	var dialogue:Array<String> = ['blah blah blah', 'coolswag'];
+	var diaEnd:Array<String> = ['eggo my leggo', 'uncoolcloth'];
 
-	var fbfBGweek1:FlxSprite;
+	var fbfBGweek:FlxSprite;
 	var isHalloween:Bool = false;
 
 	var phillyCityLights:FlxTypedGroup<FlxSprite>;
@@ -130,6 +131,10 @@ class PlayState extends MusicBeatState
 				dialogue = CoolUtil.coolTextFile(Paths.txt('hell-o/Dialogue'));
 			case 'outliiier':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('outliiier/Dialogue'));
+			case 'copycat':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('copycat/Dialogue'));
+			case 'end1':
+				diaEnd = CoolUtil.coolTextFile(Paths.txt('end1/DiaEnd'));
 		}
 
 		switch (SONG.song.toLowerCase())
@@ -138,48 +143,34 @@ class PlayState extends MusicBeatState
 				{
 					curStage = 'fbfBGweek1';
 
-					var fbfBGweek1:FlxSprite = new FlxSprite(-200, -100).loadGraphic(Paths.image('fbfBGweek1'));
+					var fbfBGweek:FlxSprite = new FlxSprite(-800, -400).loadGraphic(Paths.image('fbfBGweek1'));
 
-					fbfBGweek1.antialiasing = true;
-					fbfBGweek1.active = false;
-					add(fbfBGweek1);
+					fbfBGweek.antialiasing = true;
+					fbfBGweek.active = false;
+					add(fbfBGweek);
+					fbfBGweek.scale.set(2, 2);
 				}
 			case 'outliiier' | 'poiiint' | 'staaack theee stateees':
 				{
 					curStage = 'fbfBGweek2';
 
-					var fbfBGweek1:FlxSprite = new FlxSprite(-200, -100).loadGraphic(Paths.image('fbfBGweek2'));
+					var fbfBGweek:FlxSprite = new FlxSprite(-800, -400).loadGraphic(Paths.image('fbfBGweek2'));
 
-					fbfBGweek1.antialiasing = true;
-					fbfBGweek1.active = false;
-					add(fbfBGweek1);
+					fbfBGweek.antialiasing = true;
+					fbfBGweek.active = false;
+					add(fbfBGweek);
+					fbfBGweek.scale.set(2, 2);
 				}
 			default:
 				{
-					defaultCamZoom = 0.9;
-					curStage = 'stage';
-					var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('stageback'));
-					bg.antialiasing = true;
-					bg.scrollFactor.set(0.9, 0.9);
-					bg.active = false;
-					add(bg);
+					curStage = 'fbfBGweek3';
 
-					var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront'));
-					stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
-					stageFront.updateHitbox();
-					stageFront.antialiasing = true;
-					stageFront.scrollFactor.set(0.9, 0.9);
-					stageFront.active = false;
-					add(stageFront);
+					var fbfBGweek:FlxSprite = new FlxSprite(-800, -400).loadGraphic(Paths.image('fbfBGweek3'));
 
-					var stageCurtains:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('stagecurtains'));
-					stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
-					stageCurtains.updateHitbox();
-					stageCurtains.antialiasing = true;
-					stageCurtains.scrollFactor.set(1.3, 1.3);
-					stageCurtains.active = false;
-
-					add(stageCurtains);
+					fbfBGweek.antialiasing = true;
+					fbfBGweek.active = false;
+					add(fbfBGweek);
+					fbfBGweek.scale.set(2, 2);
 				}
 		}
 
@@ -202,7 +193,6 @@ class PlayState extends MusicBeatState
 					camPos.x += 600;
 					tweenCamIn();
 				}
-
 			case 'fenberry':
 				camPos.x += 350;
 				theotherone.x -= 300;
@@ -212,6 +202,10 @@ class PlayState extends MusicBeatState
 				theotherone.y += 280;
 				camPos.y += 280;
 				theotherone.scale.set(0.5, 0.5);
+			case 'playerstg1':
+				theotherone.y += 300;
+			case 'playerstg2':
+				theotherone.y += 150;
 		}
 
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
@@ -222,8 +216,11 @@ class PlayState extends MusicBeatState
 		add(boyfriend);
 
 		var doof:DialogueBox = new DialogueBox(false, dialogue);
+		var doof2:DialogueBox = new DialogueBox(false, diaEnd);
 		doof.scrollFactor.set();
+		doof2.scrollFactor.set();
 		doof.finishThing = startCountdown;
+		doof2.finishThing = commitsomething;
 
 		Conductor.songPosition = -5000;
 
@@ -299,6 +296,7 @@ class PlayState extends MusicBeatState
 		iconP2.cameras = [camHUD];
 		scoreTxt.cameras = [camHUD];
 		doof.cameras = [camHUD];
+		doof2.cameras = [camHUD];
 		reuploadWatermark.cameras = [camHUD];
 
 		startingSong = true;
@@ -311,6 +309,10 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'outliiier':
 					schoolIntro(doof);
+				case 'copycat':
+					schoolIntro(doof);
+				case 'end1':
+					endDia(doof2);
 				default:
 					startCountdown();
 			}
@@ -358,6 +360,20 @@ class PlayState extends MusicBeatState
 
 				remove(black);
 			}
+		});
+	}
+
+	function endDia(?dialogueBox:DialogueBox):Void
+	{
+		new FlxTimer().start(0.3, function(tmr:FlxTimer)
+		{
+			if (dialogueBox != null)
+			{
+				inCutscene = true;
+				add(dialogueBox);
+			}
+			else
+				endSong();
 		});
 	}
 
@@ -880,6 +896,12 @@ class PlayState extends MusicBeatState
 		if (FlxG.keys.justPressed.ONE)
 			endSong();
 		#end
+	}
+
+	function commitsomething():Void
+	{
+		FlxG.sound.playMusic(Paths.music('freakyMenu'));
+		FlxG.switchState(new StoryMenuState());
 	}
 
 	function endSong():Void

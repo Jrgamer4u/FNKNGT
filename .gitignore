@@ -2,5 +2,6 @@ export/
 .vscode/
 todo
 art/FNKNGT*.*
+assets/data/base/
 assets/data/introText.txt
 CHANGELOG_GAMEBANANA.md

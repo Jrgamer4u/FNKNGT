@@ -16,11 +16,10 @@ class MenuCharacter extends FlxSprite
 		var tex = Paths.getSparrowAtlas('campaign_menu_UI_characters');
 		frames = tex;
 
+		animation.addByPrefix('bl', "bl", 24);
 		animation.addByPrefix('bf', "BF idle dance white", 24);
 		animation.addByPrefix('bfConfirm', 'BF HEY!!', 24, false);
 		animation.addByPrefix('gf', "GF Dancing Beat WHITE", 24);
-		animation.addByPrefix('fenberry', "fenberry idle dance BLACK LINE", 24);
-		animation.addByPrefix('outlier', "OUTLIER idle dance", 24);
 
 		animation.play(character);
 		updateHitbox();

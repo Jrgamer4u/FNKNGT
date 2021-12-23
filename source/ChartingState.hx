@@ -81,7 +81,7 @@ class ChartingState extends MusicBeatState
 		add(notetypetext);
 
 		leftIcon = new HealthIcon('bf');
-		rightIcon = new HealthIcon('outlier');
+		rightIcon = new HealthIcon('playerstg1');
 		leftIcon.scrollFactor.set(1, 1);
 		rightIcon.scrollFactor.set(1, 1);
 

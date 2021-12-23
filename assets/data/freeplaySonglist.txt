@@ -4,3 +4,6 @@ berryfen
 outliiier
 poiiint
 staaack theee stateees
+copycat
+controller
+player

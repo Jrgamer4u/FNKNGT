@@ -19,15 +19,16 @@ class StoryMenuState extends MusicBeatState
 
 	var weekData:Array<Dynamic> = [
 		['outliiier', 'poiiint', 'staaack theee stateees'],
-		['Hell-O', 'Whas', 'Berryfen']
+		['Hell-O', 'Whas', 'Berryfen'],
+		['copycat', 'controller', 'player', 'End1']
 	];
 	var curDifficulty:Int = 0;
 
-	public static var weekUnlocked:Array<Bool> = [true, false];
+	public static var weekUnlocked:Array<Bool> = [true, false, false];
 
-	var weekCharacters:Array<Dynamic> = [['outlier', 'bf', 'gf'], ['fenberry', 'bf', 'gf']];
+	var weekCharacters:Array<Dynamic> = [['bl', 'bf', 'gf'], ['bl', 'bf', 'gf'], ['bl', 'bf', 'gf']];
 
-	var weekNames:Array<String> = ["Outlier", "Fenberry"];
+	var weekNames:Array<String> = ["VS. Outlier", "VS. Fenberry", "VS. PLAYER"];
 	var txtWeekTitle:FlxText;
 	var curWeek:Int = 0;
 	var txtTracklist:FlxText;
@@ -106,10 +107,6 @@ class StoryMenuState extends MusicBeatState
 			weekCharacterThing.antialiasing = true;
 			switch (weekCharacterThing.character)
 			{
-				case 'fenberry' | 'outlier':
-					weekCharacterThing.setGraphicSize(Std.int(weekCharacterThing.width * 0.5));
-					weekCharacterThing.updateHitbox();
-
 				case 'bf':
 					weekCharacterThing.setGraphicSize(Std.int(weekCharacterThing.width * 0.9));
 					weekCharacterThing.updateHitbox();
@@ -154,7 +151,7 @@ class StoryMenuState extends MusicBeatState
 
 		scoreText.text = "WEEK SCORE:" + lerpScore;
 
-		txtWeekTitle.text = weekNames[curWeek].toUpperCase();
+		txtWeekTitle.text = weekNames[curWeek];
 		txtWeekTitle.x = FlxG.width - (txtWeekTitle.width + 10);
 
 		difficultySelectors.visible = weekUnlocked[curWeek];
@@ -286,16 +283,8 @@ class StoryMenuState extends MusicBeatState
 		grpWeekCharacters.members[2].animation.play(weekCharacters[curWeek][2]);
 		txtTracklist.text = "Tracks\n";
 
-		switch (grpWeekCharacters.members[0].animation.curAnim.name)
-		{
-			case 'fenberry' | 'outlier':
-				grpWeekCharacters.members[0].offset.set(120, 200);
-				grpWeekCharacters.members[0].setGraphicSize(Std.int(grpWeekCharacters.members[0].width * 1));
-
-			default:
-				grpWeekCharacters.members[0].offset.set(100, 100);
-				grpWeekCharacters.members[0].setGraphicSize(Std.int(grpWeekCharacters.members[0].width * 1));
-		}
+		grpWeekCharacters.members[0].offset.set(100, 100);
+		grpWeekCharacters.members[0].setGraphicSize(Std.int(grpWeekCharacters.members[0].width * 1));
 
 		var stringThing:Array<String> = weekData[curWeek];
 

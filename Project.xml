@@ -6,7 +6,7 @@
 
 	<!-- ____________________________ Window Settings ___________________________ -->
 
-	<window width="1280" height="720" fps="60" background="#000000" hardware="true" vsync="false" />
+	<window width="2560" height="1440" fps="60" background="#000000" hardware="true" vsync="false" />
 
 	<window if="html5" resizable="true" />
 
