@@ -3,7 +3,6 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.transition.FlxTransitionableState;
-import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
@@ -220,12 +219,37 @@ class StoryMenuState extends MusicBeatState
 			PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
 			PlayState.storyWeek = curWeek;
 			PlayState.campaignScore = 0;
-			new FlxTimer().start(1, function(tmr:FlxTimer)
+
+			var isCutscene:Bool = false;
+			var video:MP4Handler = new MP4Handler();
+
+			if (curWeek == 1 && !isCutscene)
 			{
-				if (FlxG.sound.music != null)
-					FlxG.sound.music.stop();
-				FlxG.switchState(new PlayState());
-			});
+				new FlxTimer().start(1, function(tmr:FlxTimer)
+				{
+					{
+						video.playMP4(Paths.video('Algodoo'));
+						video.finishCallback = function()
+						{
+							if (FlxG.sound.music != null)
+								FlxG.sound.music.stop();
+							FlxG.switchState(new PlayState());
+						}
+						isCutscene = true;
+					}
+				});
+			}
+			else
+			{
+				new FlxTimer().start(1, function(tmr:FlxTimer)
+				{
+					if (isCutscene)
+						video.onVLCComplete();
+					if (FlxG.sound.music != null)
+						FlxG.sound.music.stop();
+					FlxG.switchState(new PlayState());
+				});
+			}
 		}
 	}
 

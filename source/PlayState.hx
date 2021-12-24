@@ -66,6 +66,7 @@ class PlayState extends MusicBeatState
 	private var healthBar:FlxBar;
 
 	private var generatedMusic:Bool = false;
+	private var shakeCam:Bool = false;
 	private var startingSong:Bool = false;
 
 	private var iconP1:HealthIcon;
@@ -675,6 +676,10 @@ class PlayState extends MusicBeatState
 
 	override public function update(elapsed:Float)
 	{
+		if (shakeCam)
+		{
+			FlxG.camera.shake(0.01, 0.05);
+		}
 		#if !debug
 		perfectMode = false;
 		#end
@@ -946,8 +951,23 @@ class PlayState extends MusicBeatState
 				FlxG.log.add('LOADING NEXT SONG');
 				FlxG.log.add(PlayState.storyPlaylist[0].toLowerCase() + difficulty);
 
-				FlxTransitionableState.skipNextTransIn = true;
-				FlxTransitionableState.skipNextTransOut = true;
+				var isCutscene:Bool = false;
+				if (curSong.toLowerCase() == 'staaack theee stateees' && !isCutscene)
+				{
+					var video:MP4Handler = new MP4Handler();
+
+					video.playMP4(Paths.video('test'));
+					video.finishCallback = function()
+					{
+						FlxG.switchState(new PlayState());
+					}
+					isCutscene = true;
+				}
+				else
+				{
+					FlxG.switchState(new PlayState());
+				}
+
 				prevCamFollow = camFollow;
 
 				PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + difficulty, PlayState.storyPlaylist[0]);
@@ -1405,6 +1425,20 @@ class PlayState extends MusicBeatState
 		{
 			resyncVocals();
 		}
+
+		/*
+			if (SONG.song.toLowerCase() == 'song')
+			{
+				if (curStep == 'step')
+				{
+					shakeCam = true;
+				}
+				if (curStep == 'step2')
+				{
+					shakeCam = false;
+				}
+			}
+		 */
 	}
 
 	var lightningStrikeBeat:Int = 0;

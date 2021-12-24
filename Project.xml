@@ -2,11 +2,11 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="FNKNGT" file="FNKNGT" packageName="com.gmail.ouboreteam.fnkngt" main="Main" version="0.6.2b" company="OuBoRe Team" />
+	<app title="FNKNGT" file="FNKNGT" packageName="com.gmail.ouboreteam.fnkngt" main="Main" version="0.7.1" company="OuBoRe Team" />
 
 	<!-- ____________________________ Window Settings ___________________________ -->
 
-	<window width="2560" height="1440" fps="60" background="#000000" hardware="true" vsync="false" />
+	<window width="2560" height="1440" fps="96" background="#000000" hardware="true" vsync="false" />
 
 	<window if="html5" resizable="true" />
 
@@ -26,10 +26,15 @@
 	<assets path="assets/data" />
 	<assets path='art/readme.txt' rename='readme.txt' />
 	
-	<assets path="assets/music" include="*.mp3" if="web"/>
-	<assets path="assets/music" include="*.ogg" unless="web"/>
-	<assets path="assets/sounds" include="*.mp3" if="web" />
-	<assets path="assets/sounds" include="*.ogg" unless="web" />
+	<assets path="assets/music" exclude="*.ogg" if="web"/>
+	<assets path="assets/music" exclude="*.mp3" unless="web"/>
+	<assets path="assets/sounds" exclude="*.ogg" if="web"/>
+	<assets path="assets/sounds" exclude="*.mp3" unless="web"/>
+
+	<assets path="assets/videos"/>
+
+	<assets path="plugins/" rename=''/>
+	<assets path="dlls/" rename=''/>
 
 	<assets path="CHANGELOG.md" rename='changelog.txt'/>
 
@@ -44,8 +49,7 @@
 	<haxelib name="hscript" />
 
 	<haxelib name="flixel-ui" />
-	<haxelib name="polymod"/>
-	<haxelib name="hxcpp-debug-server" if="desktop"/>
+	<haxelib name="hxcpp-debug-server" if="debug"/>
 
 	<!-- ______________________________ Haxedefines _____________________________ -->
 
@@ -58,6 +62,8 @@
 	<haxedef name="FLX_NO_DEBUG" unless="debug" />
 
 	<haxedef name="NAPE_RELEASE_BUILD" unless="debug" />
+
+	<haxedef name="HXCPP_ARM64" if="x86_64"/>
 
 	<!-- _________________________________ Custom _______________________________ -->
 	
