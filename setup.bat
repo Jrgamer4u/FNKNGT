@@ -5,21 +5,16 @@ echo Press any key to install required libraries.
 pause >nul
 title FNKNGT Setup - Installing libraries
 echo Installing haxelib libraries...
-haxelib install lime 7.8.0
+haxelib install lime 7.9.0
 haxelib install openfl
-haxelib install flixel 4.8.1
-haxelib install flixel-ui
-haxelib install hscript
+haxelib install flixel
 haxelib run lime setup
+haxelib run lime setup flixel
 haxelib install flixel-tools
 haxelib run flixel-tools setup
-cls
-echo Make sure you have git installed. You can download it here: https://git-scm.com/downloads
-pause >nul
-title FNKNGT Setup - Installing libraries
-echo Installing haxelib git libraries...
-haxelib git flixel-addons https://github.com/HaxeFlixel/flixel-addons
-haxelib git polymod https://github.com/larsiusprime/polymod.git
+haxelib install flixel-addons
+haxelib install flixel-ui
+haxelib install hscript
 cls
 title FNKNGT Setup - Success
 echo Setup successful. Press any key to exit.

@@ -1,25 +1,41 @@
 # FNKNGT
 
-## Credits
+## Credits:
+<br>
 
 ### FNKNGT
 - [Jrgamer4u](https://www.youtube.com/user/JRGAMER4U) - Mistake
 - [OuBoRe](https://replit.com/@OuBoRe) - Team with MIP
+<br><br>
 
 ### Friday Night Funkin
 - [ninjamuffin99](https://twitter.com/ninja_muffin99) - Programmer
 - [PhantomArcade3K](https://twitter.com/phantomarcade3k) and [Evilsk8r](https://twitter.com/evilsk8r) - Art
 - [Kawaisprite](https://twitter.com/kawaisprite) - Musician
+<br><br>
 
-## Build instructions
+## Notes:
+<br>
+
+### Note 1
+<b>This version is for non-windows.</b>
+
+Main version at https://github.com/Jrgamer4u/FNKNGT/tree/master
+<br><br>
+
+### Note 2
+<b>If you see any messages relating to deprecated packages, ignore them. They're just warnings that don't affect compiling</b>
+<br><br>
+
+## Build instructions:
+<br>
 
 ### Installing the Required Programs
 
 Use the setup.bat included in the project.
+<br><br>
 
 ### Compiling game
-
-NOTE: If you see any messages relating to deprecated packages, ignore them. They're just warnings that don't affect compiling
 
 Once you have all those installed, it's pretty easy to compile the game.
 You just need to run `lime test html5 -debug` in the root of the project to build and run the HTML5 version.
@@ -34,5 +50,6 @@ For Windows, you need to install Visual Studio Community 2019. While installing 
 Instead, go to the individual components tab and choose the following:
 * MSVC v142 - VS 2019 C++ x64/x86 build tools
 * Windows SDK (10.0.17763.0)
+
 Once that is done you can open up a command line in the project's directory and run `lime test windows -debug`.
 Once that command finishes (it takes forever even on a higher end PC), you can run FNF from the .exe file under export\release\windows\bin

@@ -66,6 +66,7 @@ class PlayState extends MusicBeatState
 	private var healthBar:FlxBar;
 
 	private var generatedMusic:Bool = false;
+	private var shakeCam:Bool = false;
 	private var startingSong:Bool = false;
 
 	private var iconP1:HealthIcon;
@@ -675,6 +676,10 @@ class PlayState extends MusicBeatState
 
 	override public function update(elapsed:Float)
 	{
+		if (shakeCam)
+		{
+			FlxG.camera.shake(0.01, 0.05);
+		}
 		#if !debug
 		perfectMode = false;
 		#end
@@ -1405,6 +1410,20 @@ class PlayState extends MusicBeatState
 		{
 			resyncVocals();
 		}
+
+		/*
+			if (SONG.song.toLowerCase() == 'song')
+			{
+				if (curStep == 'step')
+				{
+					shakeCam = true;
+				}
+				if (curStep == 'step2')
+				{
+					shakeCam = false;
+				}
+			}
+		 */
 	}
 
 	var lightningStrikeBeat:Int = 0;

@@ -104,7 +104,7 @@ class SndTV
 {
 	static var DEFAULT_DURATION = DateTools.seconds(1);
 
-	public var fps = 60.0;
+	public var fps = 96.0;
 	public var isDebug = false;
 
 	var tlist:hxd.Stack<TweenV>;

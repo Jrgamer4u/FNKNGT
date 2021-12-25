@@ -1,6 +1,12 @@
 # Changelog
 All notable changes will be documented in this file.
 
+## [0.7.1_Non-Windows] - 2021-12-24
+### Note
+- This version is Github Only, The GameBanana version will be updated when 0.8 is out.
+### Modified
+- Some of the source
+
 ## [0.7.0] - 2021-12-22
 ### Added
 - Player
