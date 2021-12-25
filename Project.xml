@@ -2,7 +2,7 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="FNKNGT" file="FNKNGT" packageName="com.gmail.ouboreteam.fnkngt" main="Main" version="0.7.1" company="OuBoRe Team" />
+	<app title="FNKNGT" file="FNKNGT" packageName="com.gmail.ouboreteam.fnkngt" main="Main" version="0.7.1_Windows" company="OuBoRe Team" />
 
 	<!-- ____________________________ Window Settings ___________________________ -->
 
