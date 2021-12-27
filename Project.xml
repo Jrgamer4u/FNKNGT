@@ -33,8 +33,9 @@
 
 	<assets path="assets/videos"/>
 
-	<assets path="plugins/" rename=''/>
-	<assets path="dlls/" rename=''/>
+	// Only works with VScode, send me your solutions at https://github.com/Jrgamer4u/FNKNGT/labels/Source-code%20editor%20can%20not%20find%20plugins%20and%20dlls
+	<assets path="C:/HaxeToolkit/haxe/lib/hxcodec/git/plugins/" rename=''/>
+	<assets path="C:/HaxeToolkit/haxe/lib/hxcodec/git/dlls/" rename=''/>
 
 	<assets path="CHANGELOG.md" rename='changelog.txt'/>
 
@@ -51,6 +52,8 @@
 	<haxelib name="flixel-ui" />
 	<haxelib name="hxcpp-debug-server" if="desktop"/>
 	<haxelib name="hxcpp-debug-server" if="debug"/>
+
+	<haxelib name="hxcodec"/>
 
 	<!-- ______________________________ Haxedefines _____________________________ -->
 
