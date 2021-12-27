@@ -575,7 +575,7 @@
         "song": "Outliiier",
         "validScore": true,
         "sections": 1,
-        "needsVoices": true,
+        "needsVoices": false,
         "bpm": 169,
         "speed": 2
     }

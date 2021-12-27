@@ -927,7 +927,7 @@
         "song": "Berryfen",
         "validScore": true,
         "sections": 1,
-        "needsVoices": true,
+        "needsVoices": false,
         "speed": 2,
         "bpm": 200
     }

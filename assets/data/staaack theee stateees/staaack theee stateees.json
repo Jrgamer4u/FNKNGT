@@ -573,7 +573,7 @@
         "song": "Staaack Theee Stateees",
         "validScore": true,
         "sections": 1,
-        "needsVoices": true,
+        "needsVoices": false,
         "bpm": 200,
         "speed": 2
     }
