@@ -18,9 +18,9 @@ class StoryMenuState extends MusicBeatState
 	var scoreText:FlxText;
 
 	var weekData:Array<Dynamic> = [
-		['outliiier', 'poiiint', 'staaack theee stateees'],
+		['Outliiier', 'Poiiint', 'Staaack Theee Stateees'],
 		['Hell-O', 'Whas', 'Berryfen'],
-		['copycat', 'controller', 'player', 'End1']
+		['Copycat', 'Controller', 'Player', 'End1']
 	];
 	var curDifficulty:Int = 0;
 
@@ -221,12 +221,36 @@ class StoryMenuState extends MusicBeatState
 			PlayState.storyWeek = curWeek;
 			PlayState.campaignScore = 0;
 
-			new FlxTimer().start(1, function(tmr:FlxTimer)
+			var video:MP4Handler = new MP4Handler();
+			var isCutscene:Bool = false;
+
+			if (curWeek == 1 && !isCutscene)
 			{
-				if (FlxG.sound.music != null)
-					FlxG.sound.music.stop();
-				FlxG.switchState(new PlayState());
-			});
+				new FlxTimer().start(1, function(tmr:FlxTimer)
+				{
+					{
+						video.playVideo(Paths.video('Algodoo'));
+						video.finishCallback = function()
+						{
+							if (FlxG.sound.music != null)
+								FlxG.sound.music.stop();
+							FlxG.switchState(new PlayState());
+						}
+						isCutscene = true;
+					}
+				});
+			}
+			else
+			{
+				new FlxTimer().start(1, function(tmr:FlxTimer)
+				{
+					if (isCutscene)
+						video.onComplete();
+					if (FlxG.sound.music != null)
+						FlxG.sound.music.stop();
+					FlxG.switchState(new PlayState());
+				});
+			}
 		}
 	}
 

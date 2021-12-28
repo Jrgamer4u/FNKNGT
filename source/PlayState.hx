@@ -35,33 +35,6 @@ class PlayState extends MusicBeatState
 
 	var halloweenLevel:Bool = false;
 
-	var video:MP4Handler;
-
-	function playCutscene(name:String)
-	{
-		inCutscene = true;
-
-		video = new MP4Handler();
-		video.finishCallback = function()
-		{
-			startCountdown();
-		}
-		video.playVideo(Paths.video(name));
-	}
-
-	function playEndCutscene(name:String)
-	{
-		inCutscene = true;
-
-		video = new MP4Handler();
-		video.finishCallback = function()
-		{
-			SONG = Song.loadFromJson(storyPlaylist[0].toLowerCase());
-			FlxG.switchState(new PlayState());
-		}
-		video.playVideo(Paths.video(name));
-	}
-
 	var reuploadWatermark:FlxText;
 
 	private var vocals:FlxSound;
@@ -335,7 +308,6 @@ class PlayState extends MusicBeatState
 			switch (curSong.toLowerCase())
 			{
 				case 'hell-o':
-					playCutscene('Algodoo');
 					schoolIntro(doof);
 				case 'outliiier':
 					schoolIntro(doof);
@@ -980,8 +952,22 @@ class PlayState extends MusicBeatState
 				FlxG.log.add('LOADING NEXT SONG');
 				FlxG.log.add(PlayState.storyPlaylist[0].toLowerCase() + difficulty);
 
-				FlxTransitionableState.skipNextTransIn = true;
-				FlxTransitionableState.skipNextTransOut = true;
+				var isCutscene:Bool = false;
+				if (curSong.toLowerCase() == 'staaack theee stateees' && !isCutscene)
+				{
+					var video:MP4Handler = new MP4Handler();
+
+					video.playVideo(Paths.video('test'));
+					video.finishCallback = function()
+					{
+						FlxG.switchState(new PlayState());
+					}
+					isCutscene = true;
+				}
+				else
+				{
+					FlxG.switchState(new PlayState());
+				}
 
 				prevCamFollow = camFollow;
 
@@ -1440,9 +1426,6 @@ class PlayState extends MusicBeatState
 		{
 			resyncVocals();
 		}
-
-		if (SONG.song.toLowerCase() == 'staaack theee stateees')
-			playEndCutscene('test');
 
 		/*
 			if (SONG.song.toLowerCase() == 'song')
