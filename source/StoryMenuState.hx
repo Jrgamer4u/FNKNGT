@@ -221,36 +221,12 @@ class StoryMenuState extends MusicBeatState
 			PlayState.storyWeek = curWeek;
 			PlayState.campaignScore = 0;
 
-			var isCutscene:Bool = false;
-			var video:MP4Handler = new MP4Handler();
-
-			if (curWeek == 1 && !isCutscene)
+			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
-				new FlxTimer().start(1, function(tmr:FlxTimer)
-				{
-					{
-						video.playMP4(Paths.video('Algodoo'));
-						video.finishCallback = function()
-						{
-							if (FlxG.sound.music != null)
-								FlxG.sound.music.stop();
-							FlxG.switchState(new PlayState());
-						}
-						isCutscene = true;
-					}
-				});
-			}
-			else
-			{
-				new FlxTimer().start(1, function(tmr:FlxTimer)
-				{
-					if (isCutscene)
-						video.onVLCComplete();
-					if (FlxG.sound.music != null)
-						FlxG.sound.music.stop();
-					FlxG.switchState(new PlayState());
-				});
-			}
+				if (FlxG.sound.music != null)
+					FlxG.sound.music.stop();
+				FlxG.switchState(new PlayState());
+			});
 		}
 	}
 
