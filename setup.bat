@@ -1,6 +1,6 @@
 @echo off
 title FNKNGT Setup - Start
-echo Make sure Haxe 4.1.5 and HaxeFlixel is installed (4.1.5 is important)!
+echo Make sure Haxe 4.1.5 is installed (4.1.5 is important)!
 echo Press any key to install required libraries.
 pause >nul
 title FNKNGT Setup - Installing libraries
