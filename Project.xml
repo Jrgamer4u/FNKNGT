@@ -33,9 +33,8 @@
 
 	<assets path="assets/videos"/>
 
-	// Only works with VScode, send me your solutions at https://github.com/Jrgamer4u/FNKNGT/labels/Source-code%20editor%20can%20not%20find%20plugins%20and%20dlls
-	<assets path="C:/HaxeToolkit/haxe/lib/hxcodec/git/plugins/" rename=''/>
-	<assets path="C:/HaxeToolkit/haxe/lib/hxcodec/git/dlls/" rename=''/>
+	<assets path="${haxelib:hxcodec}/plugins"/>
+	<assets path="${haxelib:hxcodec}/dlls" rename=''/>
 
 	<assets path="CHANGELOG.md" rename='changelog.txt'/>
 
