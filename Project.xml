@@ -33,7 +33,7 @@
 
 	<assets path="assets/videos"/>
 
-	<assets path="${haxelib:hxcodec}/plugins"/>
+	<assets path="${haxelib:hxcodec}/plugins" rename=''/>
 	<assets path="${haxelib:hxcodec}/dlls" rename=''/>
 
 	<assets path="CHANGELOG.md" rename='changelog.txt'/>
