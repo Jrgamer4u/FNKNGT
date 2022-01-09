@@ -49,7 +49,7 @@
 	<haxelib name="hscript" />
 
 	<haxelib name="flixel-ui" />
-	<haxelib name="hxcpp-debug-server" if="desktop"/>
+	<haxelib name="hxcpp-debug-server" if="windows"/>
 	<haxelib name="hxcpp-debug-server" if="debug"/>
 
 	<haxelib name="hxcodec"/>
