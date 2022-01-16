@@ -229,6 +229,7 @@ class StoryMenuState extends MusicBeatState
 				new FlxTimer().start(1, function(tmr:FlxTimer)
 				{
 					{
+						FlxG.sound.playMusic(Paths.music('Silence'), 0);
 						video.playVideo(Paths.video('Algodoo'));
 						video.finishCallback = function()
 						{

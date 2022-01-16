@@ -4,6 +4,7 @@ All notable changes will be documented in this file.
 ## Unrelased
 ### Modified
 - VLC Stuff to be moved to a dependency.
+- Added Silent file.
 
 ## [0.7.1_Windows] - 2021-12-24
 ### Note

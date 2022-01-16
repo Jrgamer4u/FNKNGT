@@ -957,6 +957,7 @@ class PlayState extends MusicBeatState
 				{
 					var video:MP4Handler = new MP4Handler();
 
+					FlxG.sound.playMusic(Paths.music('Silence'), 0);
 					video.playVideo(Paths.video('test'));
 					video.finishCallback = function()
 					{
