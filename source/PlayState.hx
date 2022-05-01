@@ -20,7 +20,7 @@ import flixel.ui.FlxBar;
 import flixel.util.FlxColor;
 import flixel.util.FlxSort;
 import flixel.util.FlxTimer;
-import hxcodec.MP4Handler;
+import vlc.MP4Handler;
 
 using StringTools;
 

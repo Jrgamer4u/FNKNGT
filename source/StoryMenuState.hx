@@ -9,7 +9,7 @@ import flixel.text.FlxText;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
-import hxcodec.MP4Handler;
+import vlc.MP4Handler;
 
 using StringTools;
 

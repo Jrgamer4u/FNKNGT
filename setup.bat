@@ -15,12 +15,7 @@ haxelib run flixel-tools setup
 haxelib install flixel-addons
 haxelib install flixel-ui
 haxelib install hscript
-cls
-title FNKNGT Setup - Notice
-echo Next part requires Git Source-Control Management: https://git-scm.com/downloads
-echo Press any key to install required libraries.
-pause >nul
-haxelib git hxCodec https://github.com/Jrgamer4u/Friday-Night-Funkin-Mp4-Video-Support haxelib-fnf-only
+haxelib install hxcodec
 cls
 title FNKNGT Setup - Success
 echo Setup successful. Press any key to exit.

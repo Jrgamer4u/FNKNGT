@@ -3,8 +3,12 @@ All notable changes will be documented in this file.
 
 ## Unrelased
 ### Modified
-- VLC Stuff to be moved to a dependency.
-- Added Silent file.
+- VLC Stuff to be moved to a dependency
+### Added
+- Silent file
+### Notes
+- Non-Mac
+- Non-x86
 
 ## [0.7.1_Windows] - 2021-12-24
 ### Note
@@ -14,6 +18,8 @@ All notable changes will be documented in this file.
 - Code for the Cutcsenes
 ### Modified
 - Some of the source
+### Notes
+- Windows only
 
 ## [0.7.0] - 2021-12-22
 ### Added
