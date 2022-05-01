@@ -46,8 +46,8 @@ sudo apt-get install libvlccore-dev
 ## Notes
 
 ### Note 1
-<b>no version for Mac and no version for x86 yet.</b>
-use the [Other Branch](https://github.com/Jrgamer4u/FNKNGT/tree/non-Windows) for now.
+<b>doesn't work for Mac and no version for x86 yet,
+wait for the hxcodec to add ports for them</b>
 <br><br>
 
 ### Note 2
