@@ -952,18 +952,19 @@ class PlayState extends MusicBeatState
 				FlxG.log.add('LOADING NEXT SONG');
 				FlxG.log.add(PlayState.storyPlaylist[0].toLowerCase() + difficulty);
 
-				var isCutscene:Bool = false;
-				if (curSong.toLowerCase() == 'staaack theee stateees' && !isCutscene)
-				{
-					var video:MP4Handler = new MP4Handler();
+				var video:MP4Handler;
 
+				if (curSong.toLowerCase() == 'staaack theee stateees' && !inCutscene)
+				{
+					inCutscene = true;
+
+					video = new MP4Handler();
 					FlxG.sound.playMusic(Paths.music('Silence'), 0);
-					video.playVideo(Paths.video('test'));
+					video.playVideo(Paths.video('test.mp4'));
 					video.finishCallback = function()
 					{
 						FlxG.switchState(new PlayState());
 					}
-					isCutscene = true;
 				}
 				else
 				{
