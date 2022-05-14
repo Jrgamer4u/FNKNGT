@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="TextureAtlas">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SubTexture" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="name" use="required" />
+						<xs:attribute name="x" type="xs:integer" use="required" />
+						<xs:attribute name="y" type="xs:integer" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="0" />
+									<xs:enumeration value="1444" />
+									<xs:enumeration value="1893" />
+									<xs:enumeration value="2344" />
+									<xs:enumeration value="509" />
+									<xs:enumeration value="988" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="width" type="xs:integer" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="357" />
+									<xs:enumeration value="360" />
+									<xs:enumeration value="369" />
+									<xs:enumeration value="370" />
+									<xs:enumeration value="373" />
+									<xs:enumeration value="374" />
+									<xs:enumeration value="376" />
+									<xs:enumeration value="378" />
+									<xs:enumeration value="383" />
+									<xs:enumeration value="395" />
+									<xs:enumeration value="400" />
+									<xs:enumeration value="405" />
+									<xs:enumeration value="406" />
+									<xs:enumeration value="408" />
+									<xs:enumeration value="410" />
+									<xs:enumeration value="413" />
+									<xs:enumeration value="414" />
+									<xs:enumeration value="433" />
+									<xs:enumeration value="439" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="height" type="xs:integer" use="required" />
+						<xs:attribute name="frameX" type="xs:integer">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="-1" />
+									<xs:enumeration value="-11" />
+									<xs:enumeration value="-13" />
+									<xs:enumeration value="-15" />
+									<xs:enumeration value="-2" />
+									<xs:enumeration value="-3" />
+									<xs:enumeration value="-5" />
+									<xs:enumeration value="-7" />
+									<xs:enumeration value="-9" />
+									<xs:enumeration value="0" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="frameY" type="xs:integer">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="-1" />
+									<xs:enumeration value="-10" />
+									<xs:enumeration value="-13" />
+									<xs:enumeration value="-14" />
+									<xs:enumeration value="-19" />
+									<xs:enumeration value="-2" />
+									<xs:enumeration value="-20" />
+									<xs:enumeration value="-26" />
+									<xs:enumeration value="-30" />
+									<xs:enumeration value="-35" />
+									<xs:enumeration value="-4" />
+									<xs:enumeration value="-5" />
+									<xs:enumeration value="-6" />
+									<xs:enumeration value="-64" />
+									<xs:enumeration value="-8" />
+									<xs:enumeration value="0" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="frameWidth" type="xs:integer">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="375" />
+									<xs:enumeration value="376" />
+									<xs:enumeration value="378" />
+									<xs:enumeration value="384" />
+									<xs:enumeration value="385" />
+									<xs:enumeration value="409" />
+									<xs:enumeration value="410" />
+									<xs:enumeration value="411" />
+									<xs:enumeration value="415" />
+									<xs:enumeration value="439" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="frameHeight" type="xs:integer">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="362" />
+									<xs:enumeration value="392" />
+									<xs:enumeration value="406" />
+									<xs:enumeration value="407" />
+									<xs:enumeration value="412" />
+									<xs:enumeration value="413" />
+									<xs:enumeration value="418" />
+									<xs:enumeration value="432" />
+									<xs:enumeration value="435" />
+									<xs:enumeration value="445" />
+									<xs:enumeration value="446" />
+									<xs:enumeration value="499" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="imagePath" use="required" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

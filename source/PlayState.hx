@@ -20,7 +20,7 @@ import flixel.ui.FlxBar;
 import flixel.util.FlxColor;
 import flixel.util.FlxSort;
 import flixel.util.FlxTimer;
-import vlc.MP4Handler;
+import vlc.VideoHandler;
 
 using StringTools;
 
@@ -952,31 +952,45 @@ class PlayState extends MusicBeatState
 				FlxG.log.add('LOADING NEXT SONG');
 				FlxG.log.add(PlayState.storyPlaylist[0].toLowerCase() + difficulty);
 
-				var video:MP4Handler;
+				var video:VideoHandler = new VideoHandler();
 
-				if (curSong.toLowerCase() == 'staaack theee stateees' && !inCutscene)
+				function playCutscene(name:String, ?end:Bool)
 				{
 					inCutscene = true;
 
-					video = new MP4Handler();
-					FlxG.sound.playMusic(Paths.music('Silence'), 0);
-					video.playVideo(Paths.video('test.mp4'));
+					FlxG.sound.music.stop();
+					video.playVideo(Paths.video(name));
 					video.finishCallback = function()
 					{
+						if (end == true)
+						{
+							SONG = Song.loadFromJson(storyPlaylist[0].toLowerCase());
+						}
 						FlxG.switchState(new PlayState());
 					}
 				}
-				else
-				{
-					FlxG.switchState(new PlayState());
-				}
 
+				switch (curSong.toLowerCase())
+				{
+					case 'staaack theee stateees':
+						playCutscene('test.mp4');
+					default:
+						FlxG.switchState(new PlayState());
+				}
 				prevCamFollow = camFollow;
 
 				PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + difficulty, PlayState.storyPlaylist[0]);
 				FlxG.sound.music.stop();
 
-				FlxG.switchState(new PlayState());
+				switch (curSong.toLowerCase())
+				{
+					/* 
+						case 'song1':
+							playCutscene('song1scene.mp4', true);
+					 */
+					default:
+						FlxG.switchState(new PlayState());
+				}
 			}
 		}
 		else

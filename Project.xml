@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="Project.xsd"?>
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
@@ -10,7 +11,7 @@
 
 	<window if="html5" resizable="true" />
 
-	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" vsync="false"/>
+	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" vsync="false" />
 
 	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" />
 
@@ -23,38 +24,40 @@
 	<classpath name="source" />
 
 	<assets path="assets/images" />
+
 	<assets path="assets/data" />
-	<assets path='art/readme.txt' rename='readme.txt' />
-	
-	<assets path="assets/music" exclude="*.ogg" if="web"/>
-	<assets path="assets/music" exclude="*.mp3" unless="web"/>
-	<assets path="assets/sounds" exclude="*.ogg" if="web"/>
-	<assets path="assets/sounds" exclude="*.mp3" unless="web"/>
 
-	<assets path="assets/videos"/>
+	<assets path="assets/music" exclude="*.ogg" if="web" />
+	<assets path="assets/music" exclude="*.mp3" unless="web" />
+	<assets path="assets/sounds" exclude="*.ogg" if="web" />
+	<assets path="assets/sounds" exclude="*.mp3" unless="web" />
 
-	<assets path="${haxelib:hxcodec}/plugins" rename=''/>
-	<assets path="${haxelib:hxcodec}/dlls" rename=''/>
+	<assets path="assets/videos" />
 
-	<assets path="CHANGELOG.md" rename='changelog.txt'/>
+	<assets path="${haxelib:hxcodec}/include" rename=''/>
 
-	<assets path="assets/fonts" embed='true'/>
-	
+	<assets path="docs/CHANGELOG.md" rename='changelog.txt' />
+	<assets path='docs/notice.md' rename='readme.txt' />
+
+	<assets path="assets/fonts" embed='true' />
+
 	<!-- _______________________________ Libraries ______________________________ -->
 
 	<haxelib name="flixel" />
-	<haxedev set='webgl' />
-
 	<haxelib name="flixel-addons" />
+
 	<haxelib name="hscript" />
 
 	<haxelib name="flixel-ui" />
-	<haxelib name="hxcpp-debug-server" if="windows"/>
-	<haxelib name="hxcpp-debug-server" if="debug"/>
 
-	<haxelib name="hxcodec"/>
+	<haxelib name="hxcpp-debug-server" if="windows" />
+	<haxelib name="hxcpp-debug-server" if="debug" />
+
+	<haxelib name="hxcodec" />
 
 	<!-- ______________________________ Haxedefines _____________________________ -->
+
+	<haxedev set='webgl' />
 
 	<haxedef name="FLX_NO_MOUSE" if="mobile" />
 	<haxedef name="FLX_NO_KEYBOARD" if="mobile" />
@@ -66,13 +69,15 @@
 
 	<haxedef name="NAPE_RELEASE_BUILD" unless="debug" />
 
-	<haxedef name="HXCPP_ARM64" if="x86_64"/>
+	<haxedef name="HXCPP_ARM64" if="arm64" />
 
-	<!-- _________________________________ Custom _______________________________ -->
-	
-	<icon path="art/icon16.png" size='16'/>
-	<icon path="art/icon32.png" size='32'/>
-	<icon path="art/icon64.png" size='64'/>
-	<icon path="art/icon.png"/>
-	
+	<haxedef name="HXC_DEBUG_TRACE" if="debug" />
+
+	<!-- _________________________________ Icons _______________________________ -->
+
+	<icon path="assets/icons/icon16.png" size='16' />
+	<icon path="assets/icons/icon32.png" size='32' />
+	<icon path="assets/icons/icon64.png" size='64' />
+	<icon path="assets/icons/icon.png" />
+
 </project>

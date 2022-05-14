@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="TextureAtlas">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SubTexture" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="name" use="required" />
+						<xs:attribute name="x" type="xs:integer" use="required" />
+						<xs:attribute name="y" type="xs:integer" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="1032" />
+									<xs:enumeration value="1215" />
+									<xs:enumeration value="167" />
+									<xs:enumeration value="332" />
+									<xs:enumeration value="511" />
+									<xs:enumeration value="859" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="width" type="xs:integer" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="484" />
+									<xs:enumeration value="615" />
+									<xs:enumeration value="627" />
+									<xs:enumeration value="629" />
+									<xs:enumeration value="632" />
+									<xs:enumeration value="794" />
+									<xs:enumeration value="796" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="height" type="xs:integer" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="122" />
+									<xs:enumeration value="169" />
+									<xs:enumeration value="170" />
+									<xs:enumeration value="173" />
+									<xs:enumeration value="174" />
+									<xs:enumeration value="181" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="frameX" type="xs:integer" />
+						<xs:attribute name="frameY" type="xs:integer" />
+						<xs:attribute name="frameWidth" type="xs:integer" />
+						<xs:attribute name="frameHeight" type="xs:integer" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="imagePath" use="required" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

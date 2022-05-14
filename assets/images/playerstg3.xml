@@ -1,27 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="playerstg3.xsd"?>
 <TextureAtlas imagePath="playerstg3.png">
-	<SubTexture name="idle dance0000" x="0" y="0" width="416" height="767"/>
-	<SubTexture name="idle dance0001" x="416" y="0" width="421" height="758"/>
-	<SubTexture name="idle dance0002" x="837" y="0" width="425" height="755"/>
-	<SubTexture name="idle dance0003" x="1262" y="0" width="421" height="755"/>
-	<SubTexture name="idle dance0004" x="1683" y="0" width="408" height="758"/>
-	<SubTexture name="idle dance0005" x="2091" y="0" width="395" height="762"/>
-	<SubTexture name="idle dance0006" x="0" y="767" width="395" height="767"/>
-	<SubTexture name="idle dance0007" x="395" y="767" width="408" height="765"/>
-	<SubTexture name="idle dance0008" x="803" y="758" width="421" height="758"/>
-	<SubTexture name="idle dance0009" x="1224" y="755" width="425" height="762"/>
-	<SubTexture name="idle dance0010" x="1649" y="758" width="421" height="764"/>
-	<SubTexture name="idle dance0011" x="2070" y="762" width="417" height="766"/>
-	<SubTexture name="NOTE DOWN0000" x="0" y="1524" width="413" height="767"/>
-	<SubTexture name="NOTE DOWN0001" x="413" y="1532" width="387" height="770"/>
-	<SubTexture name="NOTE DOWN0002" x="800" y="1532" width="390" height="772"/>
-	<SubTexture name="NOTE LEFT0000" x="1190" y="1520" width="413" height="767"/>
-	<SubTexture name="NOTE LEFT0001" x="1603" y="1522" width="400" height="765"/>
-	<SubTexture name="NOTE LEFT0002" x="2003" y="1528" width="417" height="756"/>
-	<SubTexture name="NOTE RIGHT0000" x="0" y="2302" width="425" height="748"/>
-	<SubTexture name="NOTE RIGHT0001" x="425" y="2304" width="406" height="762"/>
-	<SubTexture name="NOTE RIGHT0002" x="831" y="2304" width="398" height="767"/>
-	<SubTexture name="NOTE UP0000" x="1229" y="2287" width="420" height="767"/>
-	<SubTexture name="NOTE UP0001" x="1649" y="2287" width="430" height="766"/>
-	<SubTexture name="NOTE UP0002" x="2079" y="2284" width="440" height="765"/>
+	<SubTexture name="idle dance0000" x="0" y="0" width="416" height="767" />
+	<SubTexture name="idle dance0001" x="416" y="0" width="421" height="758" />
+	<SubTexture name="idle dance0002" x="837" y="0" width="425" height="755" />
+	<SubTexture name="idle dance0003" x="1262" y="0" width="421" height="755" />
+	<SubTexture name="idle dance0004" x="1683" y="0" width="408" height="758" />
+	<SubTexture name="idle dance0005" x="2091" y="0" width="395" height="762" />
+	<SubTexture name="idle dance0006" x="0" y="767" width="395" height="767" />
+	<SubTexture name="idle dance0007" x="395" y="767" width="408" height="765" />
+	<SubTexture name="idle dance0008" x="803" y="758" width="421" height="758" />
+	<SubTexture name="idle dance0009" x="1224" y="755" width="425" height="762" />
+	<SubTexture name="idle dance0010" x="1649" y="758" width="421" height="764" />
+	<SubTexture name="idle dance0011" x="2070" y="762" width="417" height="766" />
+	<SubTexture name="NOTE DOWN0000" x="0" y="1524" width="413" height="767" />
+	<SubTexture name="NOTE DOWN0001" x="413" y="1532" width="387" height="770" />
+	<SubTexture name="NOTE DOWN0002" x="800" y="1532" width="390" height="772" />
+	<SubTexture name="NOTE LEFT0000" x="1190" y="1520" width="413" height="767" />
+	<SubTexture name="NOTE LEFT0001" x="1603" y="1522" width="400" height="765" />
+	<SubTexture name="NOTE LEFT0002" x="2003" y="1528" width="417" height="756" />
+	<SubTexture name="NOTE RIGHT0000" x="0" y="2302" width="425" height="748" />
+	<SubTexture name="NOTE RIGHT0001" x="425" y="2304" width="406" height="762" />
+	<SubTexture name="NOTE RIGHT0002" x="831" y="2304" width="398" height="767" />
+	<SubTexture name="NOTE UP0000" x="1229" y="2287" width="420" height="767" />
+	<SubTexture name="NOTE UP0001" x="1649" y="2287" width="430" height="766" />
+	<SubTexture name="NOTE UP0002" x="2079" y="2284" width="440" height="765" />
 </TextureAtlas>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="project">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="app">
+					<xs:complexType>
+						<xs:attribute name="title" use="required" />
+						<xs:attribute name="file" use="required" />
+						<xs:attribute name="packageName" use="required" />
+						<xs:attribute name="main" use="required" />
+						<xs:attribute name="version" use="required" />
+						<xs:attribute name="company" use="required" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="window" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="width" type="xs:integer" />
+						<xs:attribute name="height" type="xs:integer" />
+						<xs:attribute name="fps" type="xs:integer" />
+						<xs:attribute name="background" />
+						<xs:attribute name="hardware" type="xs:boolean" />
+						<xs:attribute name="vsync" type="xs:boolean" />
+						<xs:attribute name="if" />
+						<xs:attribute name="resizable" type="xs:boolean" />
+						<xs:attribute name="orientation" />
+						<xs:attribute name="fullscreen" type="xs:boolean" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="set" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="name" use="required" />
+						<xs:attribute name="value" use="required" />
+						<xs:attribute name="if" />
+						<xs:attribute name="unless" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="classpath">
+					<xs:complexType>
+						<xs:attribute name="name" use="required" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="assets" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="path" use="required" />
+						<xs:attribute name="exclude" />
+						<xs:attribute name="if" />
+						<xs:attribute name="unless" />
+						<xs:attribute name="rename" />
+						<xs:attribute name="embed" type="xs:boolean" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="haxelib" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="name" use="required" />
+						<xs:attribute name="if" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="haxedev">
+					<xs:complexType>
+						<xs:attribute name="set" use="required" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="haxedef" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="name" use="required" />
+						<xs:attribute name="if" />
+						<xs:attribute name="unless" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="icon" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="path" use="required" />
+						<xs:attribute name="size" type="xs:integer" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -5,7 +5,9 @@ All notable changes will be documented in this file.
 ### Modified
 - VLC Stuff to be moved to a dependency
 ### Added
-- Silent file
+- XMLs to XSDs.
+### Removed
+- Art folder, contents moved to other folders.
 ### Notes
 - Non-Mac
 - Non-x86

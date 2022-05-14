@@ -15,7 +15,13 @@ haxelib run flixel-tools setup
 haxelib install flixel-addons
 haxelib install flixel-ui
 haxelib install hscript
-haxelib install hxcodec
+cls
+echo Make sure you have git installed. You can download it here: https://git-scm.com/downloads
+echo Press any key to install HxCodec.
+pause >nul
+title FNF Setup - Installing libraries
+echo Installing haxelib libraries...
+haxelib git hxCodec https://github.com/polybiusproxy/hxCodec.git
 cls
 title FNKNGT Setup - Success
 echo Setup successful. Press any key to exit.

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="TextureAtlas">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SubTexture" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="name" use="required" />
+						<xs:attribute name="x" type="xs:integer" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="0" />
+									<xs:enumeration value="1277" />
+									<xs:enumeration value="1298" />
+									<xs:enumeration value="14" />
+									<xs:enumeration value="1732" />
+									<xs:enumeration value="1975" />
+									<xs:enumeration value="2140" />
+									<xs:enumeration value="2596" />
+									<xs:enumeration value="2816" />
+									<xs:enumeration value="2939" />
+									<xs:enumeration value="3017" />
+									<xs:enumeration value="651" />
+									<xs:enumeration value="982" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="y" type="xs:integer" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="0" />
+									<xs:enumeration value="1003" />
+									<xs:enumeration value="1951" />
+									<xs:enumeration value="1957" />
+									<xs:enumeration value="2627" />
+									<xs:enumeration value="2639" />
+									<xs:enumeration value="996" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="width" type="xs:integer" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="1078" />
+									<xs:enumeration value="1081" />
+									<xs:enumeration value="1083" />
+									<xs:enumeration value="1298" />
+									<xs:enumeration value="863" />
+									<xs:enumeration value="877" />
+									<xs:enumeration value="955" />
+									<xs:enumeration value="964" />
+									<xs:enumeration value="968" />
+									<xs:enumeration value="993" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="height" type="xs:integer" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="1003" />
+									<xs:enumeration value="1033" />
+									<xs:enumeration value="670" />
+									<xs:enumeration value="676" />
+									<xs:enumeration value="688" />
+									<xs:enumeration value="944" />
+									<xs:enumeration value="948" />
+									<xs:enumeration value="954" />
+									<xs:enumeration value="970" />
+									<xs:enumeration value="978" />
+									<xs:enumeration value="996" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="frameX" type="xs:integer" />
+						<xs:attribute name="frameY" type="xs:integer" />
+						<xs:attribute name="frameWidth" type="xs:integer" />
+						<xs:attribute name="frameHeight" type="xs:integer" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="imagePath" use="required" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

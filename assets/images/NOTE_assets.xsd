@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="TextureAtlas">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SubTexture" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="name" use="required" />
+						<xs:attribute name="x" type="xs:integer" use="required" />
+						<xs:attribute name="y" type="xs:integer" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="0" />
+									<xs:enumeration value="154" />
+									<xs:enumeration value="226" />
+									<xs:enumeration value="228" />
+									<xs:enumeration value="230" />
+									<xs:enumeration value="231" />
+									<xs:enumeration value="232" />
+									<xs:enumeration value="235" />
+									<xs:enumeration value="308" />
+									<xs:enumeration value="385" />
+									<xs:enumeration value="388" />
+									<xs:enumeration value="389" />
+									<xs:enumeration value="392" />
+									<xs:enumeration value="442" />
+									<xs:enumeration value="447" />
+									<xs:enumeration value="449" />
+									<xs:enumeration value="571" />
+									<xs:enumeration value="575" />
+									<xs:enumeration value="578" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="width" type="xs:integer" use="required" />
+						<xs:attribute name="height" type="xs:integer" use="required" />
+						<xs:attribute name="frameX" type="xs:integer" />
+						<xs:attribute name="frameY" type="xs:integer" />
+						<xs:attribute name="frameWidth" type="xs:integer" />
+						<xs:attribute name="frameHeight" type="xs:integer" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="imagePath" use="required" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

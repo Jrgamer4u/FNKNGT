@@ -1,60 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="fenberry.xsd"?>
 <TextureAtlas imagePath="fenberry.png">
-	<SubTexture name="fenberry Sing Note DOWN0000" x="2596" y="1957" width="1298" height="670" frameX="0" frameY="-330" frameWidth="1298" frameHeight="1000"/>
-	<SubTexture name="fenberry Sing Note DOWN0001" x="2596" y="1957" width="1298" height="670" frameX="0" frameY="-330" frameWidth="1298" frameHeight="1000"/>
-	<SubTexture name="fenberry Sing Note DOWN0002" x="2596" y="1957" width="1298" height="670" frameX="0" frameY="-330" frameWidth="1298" frameHeight="1000"/>
-	<SubTexture name="fenberry Sing Note DOWN0003" x="2596" y="1957" width="1298" height="670" frameX="0" frameY="-330" frameWidth="1298" frameHeight="1000"/>
-	<SubTexture name="fenberry Sing Note DOWN0004" x="2596" y="1957" width="1298" height="670" frameX="0" frameY="-330" frameWidth="1298" frameHeight="1000"/>
-	<SubTexture name="fenberry Sing Note DOWN0005" x="2596" y="1957" width="1298" height="670" frameX="0" frameY="-330" frameWidth="1298" frameHeight="1000"/>
-	<SubTexture name="fenberry Sing Note DOWN0006" x="1298" y="1951" width="1298" height="688" frameX="0" frameY="-312" frameWidth="1298" frameHeight="1000"/>
-	<SubTexture name="fenberry Sing Note DOWN0007" x="1298" y="1951" width="1298" height="688" frameX="0" frameY="-312" frameWidth="1298" frameHeight="1000"/>
-	<SubTexture name="fenberry Sing Note DOWN0008" x="0" y="1951" width="1298" height="676"/>
-	<SubTexture name="fenberry Sing Note DOWN0009" x="0" y="1951" width="1298" height="676"/>
-	<SubTexture name="fenberry Sing Note DOWN0010" x="0" y="1951" width="1298" height="676"/>
-	<SubTexture name="fenberry Sing Note DOWN0011" x="0" y="1951" width="1298" height="676"/>
-	<SubTexture name="fenberry Sing Note LEFT0000" x="1277" y="2639" width="863" height="970"/>
-	<SubTexture name="fenberry Sing Note RIGHT0000" x="2816" y="1003" width="1078" height="954"/>
-	<SubTexture name="fenberry Sing Note RIGHT0001" x="2816" y="1003" width="1078" height="954"/>
-	<SubTexture name="fenberry Sing Note RIGHT0002" x="2816" y="1003" width="1078" height="954"/>
-	<SubTexture name="fenberry Sing Note RIGHT0003" x="2816" y="1003" width="1078" height="954"/>
-	<SubTexture name="fenberry Sing Note RIGHT0004" x="2816" y="1003" width="1078" height="954"/>
-	<SubTexture name="fenberry Sing Note RIGHT0005" x="2816" y="1003" width="1078" height="954"/>
-	<SubTexture name="fenberry Sing Note RIGHT0006" x="1732" y="996" width="1083" height="944"/>
-	<SubTexture name="fenberry Sing Note RIGHT0007" x="1732" y="996" width="1083" height="944"/>
-	<SubTexture name="fenberry Sing Note RIGHT0008" x="651" y="1003" width="1081" height="948"/>
-	<SubTexture name="fenberry Sing Note RIGHT0009" x="651" y="1003" width="1081" height="948"/>
-	<SubTexture name="fenberry Sing Note RIGHT0010" x="651" y="1003" width="1081" height="948"/>
-	<SubTexture name="fenberry Sing Note RIGHT0011" x="651" y="1003" width="1081" height="948"/>
-	<SubTexture name="fenberry Sing Note UP0000" x="3017" y="2627" width="877" height="1033"/>
-	<SubTexture name="fenberry Sing Note UP0001" x="3017" y="2627" width="877" height="1033"/>
-	<SubTexture name="fenberry Sing Note UP0002" x="3017" y="2627" width="877" height="1033"/>
-	<SubTexture name="fenberry Sing Note UP0003" x="3017" y="2627" width="877" height="1033"/>
-	<SubTexture name="fenberry Sing Note UP0004" x="3017" y="2627" width="877" height="1033"/>
-	<SubTexture name="fenberry Sing Note UP0005" x="3017" y="2627" width="877" height="1033"/>
-	<SubTexture name="fenberry Sing Note UP0006" x="3017" y="2627" width="877" height="1033"/>
-	<SubTexture name="fenberry Sing Note UP0007" x="3017" y="2627" width="877" height="1033"/>
-	<SubTexture name="fenberry Sing Note UP0008" x="3017" y="2627" width="877" height="1033"/>
-	<SubTexture name="fenberry Sing Note UP0009" x="3017" y="2627" width="877" height="1033"/>
-	<SubTexture name="fenberry Sing Note UP0010" x="2140" y="2639" width="877" height="1033"/>
-	<SubTexture name="fenberry Sing Note UP0011" x="2140" y="2639" width="877" height="1033"/>
-	<SubTexture name="fenberry idle dance0000" x="2939" y="0" width="955" height="1003"/>
-	<SubTexture name="fenberry idle dance0001" x="2939" y="0" width="955" height="1003"/>
-	<SubTexture name="fenberry idle dance0002" x="2939" y="0" width="955" height="1003"/>
-	<SubTexture name="fenberry idle dance0003" x="2939" y="0" width="955" height="1003"/>
-	<SubTexture name="fenberry idle dance0004" x="2939" y="0" width="955" height="1003"/>
-	<SubTexture name="fenberry idle dance0005" x="2939" y="0" width="955" height="1003"/>
-	<SubTexture name="fenberry idle dance0006" x="1975" y="0" width="964" height="996"/>
-	<SubTexture name="fenberry idle dance0007" x="1975" y="0" width="964" height="996"/>
-	<SubTexture name="fenberry idle dance0008" x="982" y="0" width="993" height="978"/>
-	<SubTexture name="fenberry idle dance0009" x="982" y="0" width="993" height="978"/>
-	<SubTexture name="fenberry idle dance0010" x="982" y="0" width="993" height="978"/>
-	<SubTexture name="fenberry idle dance0011" x="982" y="0" width="993" height="978"/>
-	<SubTexture name="fenberry idle dance0012" x="982" y="0" width="993" height="978"/>
-	<SubTexture name="fenberry idle dance0013" x="982" y="0" width="993" height="978"/>
-	<SubTexture name="fenberry idle dance0014" x="982" y="0" width="993" height="978"/>
-	<SubTexture name="fenberry idle dance0015" x="982" y="0" width="993" height="978"/>
-	<SubTexture name="fenberry idle dance0016" x="14" y="0" width="968" height="1003"/>
-	<SubTexture name="fenberry idle dance0017" x="14" y="0" width="968" height="1003"/>
-	<SubTexture name="fenberry idle dance0018" x="14" y="0" width="968" height="1003"/>
-	<SubTexture name="fenberry idle dance0019" x="14" y="0" width="968" height="1003"/>
+	<SubTexture name="fenberry Sing Note DOWN0000" x="2596" y="1957" width="1298" height="670" frameX="0" frameY="-330" frameWidth="1298" frameHeight="1000" />
+	<SubTexture name="fenberry Sing Note DOWN0001" x="2596" y="1957" width="1298" height="670" frameX="0" frameY="-330" frameWidth="1298" frameHeight="1000" />
+	<SubTexture name="fenberry Sing Note DOWN0002" x="2596" y="1957" width="1298" height="670" frameX="0" frameY="-330" frameWidth="1298" frameHeight="1000" />
+	<SubTexture name="fenberry Sing Note DOWN0003" x="2596" y="1957" width="1298" height="670" frameX="0" frameY="-330" frameWidth="1298" frameHeight="1000" />
+	<SubTexture name="fenberry Sing Note DOWN0004" x="2596" y="1957" width="1298" height="670" frameX="0" frameY="-330" frameWidth="1298" frameHeight="1000" />
+	<SubTexture name="fenberry Sing Note DOWN0005" x="2596" y="1957" width="1298" height="670" frameX="0" frameY="-330" frameWidth="1298" frameHeight="1000" />
+	<SubTexture name="fenberry Sing Note DOWN0006" x="1298" y="1951" width="1298" height="688" frameX="0" frameY="-312" frameWidth="1298" frameHeight="1000" />
+	<SubTexture name="fenberry Sing Note DOWN0007" x="1298" y="1951" width="1298" height="688" frameX="0" frameY="-312" frameWidth="1298" frameHeight="1000" />
+	<SubTexture name="fenberry Sing Note DOWN0008" x="0" y="1951" width="1298" height="676" />
+	<SubTexture name="fenberry Sing Note DOWN0009" x="0" y="1951" width="1298" height="676" />
+	<SubTexture name="fenberry Sing Note DOWN0010" x="0" y="1951" width="1298" height="676" />
+	<SubTexture name="fenberry Sing Note DOWN0011" x="0" y="1951" width="1298" height="676" />
+	<SubTexture name="fenberry Sing Note LEFT0000" x="1277" y="2639" width="863" height="970" />
+	<SubTexture name="fenberry Sing Note RIGHT0000" x="2816" y="1003" width="1078" height="954" />
+	<SubTexture name="fenberry Sing Note RIGHT0001" x="2816" y="1003" width="1078" height="954" />
+	<SubTexture name="fenberry Sing Note RIGHT0002" x="2816" y="1003" width="1078" height="954" />
+	<SubTexture name="fenberry Sing Note RIGHT0003" x="2816" y="1003" width="1078" height="954" />
+	<SubTexture name="fenberry Sing Note RIGHT0004" x="2816" y="1003" width="1078" height="954" />
+	<SubTexture name="fenberry Sing Note RIGHT0005" x="2816" y="1003" width="1078" height="954" />
+	<SubTexture name="fenberry Sing Note RIGHT0006" x="1732" y="996" width="1083" height="944" />
+	<SubTexture name="fenberry Sing Note RIGHT0007" x="1732" y="996" width="1083" height="944" />
+	<SubTexture name="fenberry Sing Note RIGHT0008" x="651" y="1003" width="1081" height="948" />
+	<SubTexture name="fenberry Sing Note RIGHT0009" x="651" y="1003" width="1081" height="948" />
+	<SubTexture name="fenberry Sing Note RIGHT0010" x="651" y="1003" width="1081" height="948" />
+	<SubTexture name="fenberry Sing Note RIGHT0011" x="651" y="1003" width="1081" height="948" />
+	<SubTexture name="fenberry Sing Note UP0000" x="3017" y="2627" width="877" height="1033" />
+	<SubTexture name="fenberry Sing Note UP0001" x="3017" y="2627" width="877" height="1033" />
+	<SubTexture name="fenberry Sing Note UP0002" x="3017" y="2627" width="877" height="1033" />
+	<SubTexture name="fenberry Sing Note UP0003" x="3017" y="2627" width="877" height="1033" />
+	<SubTexture name="fenberry Sing Note UP0004" x="3017" y="2627" width="877" height="1033" />
+	<SubTexture name="fenberry Sing Note UP0005" x="3017" y="2627" width="877" height="1033" />
+	<SubTexture name="fenberry Sing Note UP0006" x="3017" y="2627" width="877" height="1033" />
+	<SubTexture name="fenberry Sing Note UP0007" x="3017" y="2627" width="877" height="1033" />
+	<SubTexture name="fenberry Sing Note UP0008" x="3017" y="2627" width="877" height="1033" />
+	<SubTexture name="fenberry Sing Note UP0009" x="3017" y="2627" width="877" height="1033" />
+	<SubTexture name="fenberry Sing Note UP0010" x="2140" y="2639" width="877" height="1033" />
+	<SubTexture name="fenberry Sing Note UP0011" x="2140" y="2639" width="877" height="1033" />
+	<SubTexture name="fenberry idle dance0000" x="2939" y="0" width="955" height="1003" />
+	<SubTexture name="fenberry idle dance0001" x="2939" y="0" width="955" height="1003" />
+	<SubTexture name="fenberry idle dance0002" x="2939" y="0" width="955" height="1003" />
+	<SubTexture name="fenberry idle dance0003" x="2939" y="0" width="955" height="1003" />
+	<SubTexture name="fenberry idle dance0004" x="2939" y="0" width="955" height="1003" />
+	<SubTexture name="fenberry idle dance0005" x="2939" y="0" width="955" height="1003" />
+	<SubTexture name="fenberry idle dance0006" x="1975" y="0" width="964" height="996" />
+	<SubTexture name="fenberry idle dance0007" x="1975" y="0" width="964" height="996" />
+	<SubTexture name="fenberry idle dance0008" x="982" y="0" width="993" height="978" />
+	<SubTexture name="fenberry idle dance0009" x="982" y="0" width="993" height="978" />
+	<SubTexture name="fenberry idle dance0010" x="982" y="0" width="993" height="978" />
+	<SubTexture name="fenberry idle dance0011" x="982" y="0" width="993" height="978" />
+	<SubTexture name="fenberry idle dance0012" x="982" y="0" width="993" height="978" />
+	<SubTexture name="fenberry idle dance0013" x="982" y="0" width="993" height="978" />
+	<SubTexture name="fenberry idle dance0014" x="982" y="0" width="993" height="978" />
+	<SubTexture name="fenberry idle dance0015" x="982" y="0" width="993" height="978" />
+	<SubTexture name="fenberry idle dance0016" x="14" y="0" width="968" height="1003" />
+	<SubTexture name="fenberry idle dance0017" x="14" y="0" width="968" height="1003" />
+	<SubTexture name="fenberry idle dance0018" x="14" y="0" width="968" height="1003" />
+	<SubTexture name="fenberry idle dance0019" x="14" y="0" width="968" height="1003" />
 </TextureAtlas>
