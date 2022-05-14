@@ -311,6 +311,8 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'hell-o':
 					playCutscene('Algodoo.mp4');
+				case 'staaack theee stateees':
+					playCutscene('test.mp4');
 				case 'copycat':
 					schoolIntro(doof);
 				case 'end1':
@@ -321,7 +323,19 @@ class PlayState extends MusicBeatState
 		}
 		else
 		{
-			startCountdown();
+			switch (curSong.toLowerCase())
+			{
+				case 'outliiier':
+					schoolIntro(doof);
+				case 'hell-o':
+					schoolIntro(doof);
+				case 'copycat':
+					schoolIntro(doof);
+				case 'end1':
+					endDia(doof2);
+				default:
+					startCountdown();
+			}
 		}
 
 		super.create();
@@ -434,23 +448,17 @@ class PlayState extends MusicBeatState
 	var lastReportedPlayheadPosition:Int = 0;
 	var songTime:Float = 0;
 
-	function playCutscene(name:String, ?end:Bool)
+	function playCutscene(name:String)
 	{
 		inCutscene = true;
 
 		var video:VideoHandler = new VideoHandler();
 		FlxG.sound.music.stop();
+		video.playVideo(Paths.video(name));
 		video.finishCallback = function()
 		{
-			if (end == true)
-			{
-				SONG = Song.loadFromJson(storyPlaylist[0].toLowerCase());
-				FlxG.switchState(new PlayState());
-			}
-			else
-				startCountdown();
+			startCountdown();
 		}
-		video.playVideo(Paths.video(name));
 	}
 
 	function startSong():Void
@@ -967,27 +975,14 @@ class PlayState extends MusicBeatState
 				FlxG.log.add('LOADING NEXT SONG');
 				FlxG.log.add(PlayState.storyPlaylist[0].toLowerCase() + difficulty);
 
-				switch (curSong.toLowerCase())
-				{
-					case 'staaack theee stateees':
-						playCutscene('test.mp4');
-					default:
-						FlxG.switchState(new PlayState());
-				}
+				FlxTransitionableState.skipNextTransIn = true;
+				FlxTransitionableState.skipNextTransOut = true;
 				prevCamFollow = camFollow;
 
 				PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + difficulty, PlayState.storyPlaylist[0]);
 				FlxG.sound.music.stop();
 
-				switch (curSong.toLowerCase())
-				{
-					/* 
-						case 'song1':
-							playCutscene('song1scene.mp4', true);
-					 */
-					default:
-						FlxG.switchState(new PlayState());
-				}
+				FlxG.switchState(new PlayState());
 			}
 		}
 		else

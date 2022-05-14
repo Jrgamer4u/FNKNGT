@@ -16,6 +16,11 @@ class StoryMenuState extends MusicBeatState
 {
 	var scoreText:FlxText;
 
+	var weekView:Array<Dynamic> = [
+		['Outlier', 'The Point', 'Stack the States'],
+		['Hell-o, my name is...', 'What?', 'Who?', 'What?', 'Who?','Hi...', 'Who?', 'My name is...', 'What?', 'BerryFen'],
+		['The Copycat', 'The "Controller"', '"Player"']
+	];
 	var weekData:Array<Dynamic> = [
 		['Outliiier', 'Poiiint', 'Staaack Theee Stateees'],
 		['Hell-O', 'Whas', 'Berryfen'],
@@ -283,7 +288,7 @@ class StoryMenuState extends MusicBeatState
 		grpWeekCharacters.members[0].offset.set(100, 100);
 		grpWeekCharacters.members[0].setGraphicSize(Std.int(grpWeekCharacters.members[0].width * 1));
 
-		var stringThing:Array<String> = weekData[curWeek];
+		var stringThing:Array<String> = weekView[curWeek];
 
 		for (i in stringThing)
 		{
