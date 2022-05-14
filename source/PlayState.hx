@@ -434,7 +434,7 @@ class PlayState extends MusicBeatState
 	var lastReportedPlayheadPosition:Int = 0;
 	var songTime:Float = 0;
 
-	function playCutscene(name:String, ?end:Bool)
+	function playCutscene(name:String, ?atend:Bool)
 	{
 		inCutscene = true;
 
