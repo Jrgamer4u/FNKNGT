@@ -9,7 +9,6 @@ import flixel.text.FlxText;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
-import vlc.VideoHandler;
 
 using StringTools;
 
@@ -220,35 +219,10 @@ class StoryMenuState extends MusicBeatState
 			PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
 			PlayState.storyWeek = curWeek;
 			PlayState.campaignScore = 0;
-
-			var video:VideoHandler = new VideoHandler();
-			var inCutscene:Bool = false;
-
-			if (curWeek == 1 && !inCutscene)
+			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
-				new FlxTimer().start(1, function(tmr:FlxTimer)
-				{
-					{
-						inCutscene = true;
-
-						FlxG.sound.music.stop();
-						video.playVideo(Paths.video('Algodoo.mp4'));
-						video.finishCallback = function()
-						{
-							FlxG.switchState(new PlayState());
-						}
-					}
-				});
-			}
-			else
-			{
-				new FlxTimer().start(1, function(tmr:FlxTimer)
-				{
-					if (inCutscene)
-						video.onComplete();
-					FlxG.switchState(new PlayState());
-				});
-			}
+				FlxG.switchState(new PlayState());
+			});
 		}
 	}
 

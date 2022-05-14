@@ -307,10 +307,10 @@ class PlayState extends MusicBeatState
 		{
 			switch (curSong.toLowerCase())
 			{
-				case 'hell-o':
-					schoolIntro(doof);
 				case 'outliiier':
 					schoolIntro(doof);
+				case 'hell-o':
+					playCutscene('Algodoo.mp4');
 				case 'copycat':
 					schoolIntro(doof);
 				case 'end1':
@@ -321,11 +321,7 @@ class PlayState extends MusicBeatState
 		}
 		else
 		{
-			switch (curSong.toLowerCase())
-			{
-				default:
-					startCountdown();
-			}
+			startCountdown();
 		}
 
 		super.create();
@@ -437,6 +433,25 @@ class PlayState extends MusicBeatState
 	var previousFrameTime:Int = 0;
 	var lastReportedPlayheadPosition:Int = 0;
 	var songTime:Float = 0;
+
+	function playCutscene(name:String, ?end:Bool)
+	{
+		inCutscene = true;
+
+		var video:VideoHandler = new VideoHandler();
+		FlxG.sound.music.stop();
+		video.finishCallback = function()
+		{
+			if (end == true)
+			{
+				SONG = Song.loadFromJson(storyPlaylist[0].toLowerCase());
+				FlxG.switchState(new PlayState());
+			}
+			else
+				startCountdown();
+		}
+		video.playVideo(Paths.video(name));
+	}
 
 	function startSong():Void
 	{
@@ -951,24 +966,6 @@ class PlayState extends MusicBeatState
 
 				FlxG.log.add('LOADING NEXT SONG');
 				FlxG.log.add(PlayState.storyPlaylist[0].toLowerCase() + difficulty);
-
-				var video:VideoHandler = new VideoHandler();
-
-				function playCutscene(name:String, ?end:Bool)
-				{
-					inCutscene = true;
-
-					FlxG.sound.music.stop();
-					video.playVideo(Paths.video(name));
-					video.finishCallback = function()
-					{
-						if (end == true)
-						{
-							SONG = Song.loadFromJson(storyPlaylist[0].toLowerCase());
-						}
-						FlxG.switchState(new PlayState());
-					}
-				}
 
 				switch (curSong.toLowerCase())
 				{
