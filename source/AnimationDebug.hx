@@ -3,13 +3,12 @@ package;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
-import flixel.FlxState;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 
-class AnimationDebug extends FlxState
+class AnimationDebug extends MusicBeatState
 {
 	var bf:Boyfriend;
 	var theotherone:Character;
@@ -47,7 +46,6 @@ class AnimationDebug extends FlxState
 			add(theotherone);
 
 			char = theotherone;
-			theotherone.flipX = false;
 		}
 		else
 		{
@@ -57,7 +55,6 @@ class AnimationDebug extends FlxState
 			add(bf);
 
 			char = bf;
-			bf.flipX = false;
 		}
 
 		dumbTexts = new FlxTypedGroup<FlxText>();
@@ -132,19 +129,13 @@ class AnimationDebug extends FlxState
 				camFollow.velocity.x = 0;
 		}
 		else
-		{
 			camFollow.velocity.set();
-		}
 
 		if (FlxG.keys.justPressed.W)
-		{
 			curAnim -= 1;
-		}
 
 		if (FlxG.keys.justPressed.S)
-		{
 			curAnim += 1;
-		}
 
 		if (curAnim < 0)
 			curAnim = animList.length - 1;
@@ -159,6 +150,9 @@ class AnimationDebug extends FlxState
 			updateTexts();
 			genBoyOffsets(false);
 		}
+
+		if (controls.ACCEPT)
+			FlxG.switchState(new MainMenuState());
 
 		var upP = FlxG.keys.anyJustPressed([UP]);
 		var rightP = FlxG.keys.anyJustPressed([RIGHT]);

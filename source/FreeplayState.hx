@@ -3,9 +3,11 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.group.FlxGroup.FlxTypedGroup;
-import flixel.math.FlxMath;
 import flixel.text.FlxText;
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
+import flixel.util.FlxTimer;
 
 using StringTools;
 
@@ -19,22 +21,23 @@ class FreeplayState extends MusicBeatState
 
 	var scoreText:FlxText;
 	var diffText:FlxText;
-	var lerpScore:Int = 0;
+	var tweenScore:Int = 0;
 	var intendedScore:Int = 0;
+
+	var songWait:FlxTimer = new FlxTimer();
 
 	private var grpSongs:FlxTypedGroup<Alphabet>;
 	private var curPlaying:Bool = false;
 
 	private var iconArray:Array<HealthIcon> = [];
+	var trackedAssets:Array<Dynamic> = [];
 
 	override function create()
 	{
 		var initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist'));
 
 		for (i in 0...initSonglist.length)
-		{
 			songs.push(new SongMetadata(initSonglist[i], 0, 'outlier'));
-		}
 
 		var isDebug:Bool = false;
 
@@ -94,9 +97,7 @@ class FreeplayState extends MusicBeatState
 	}
 
 	public function addSong(songName:String, weekNum:Int, songCharacter:String)
-	{
 		songs.push(new SongMetadata(songName, weekNum, songCharacter));
-	}
 
 	public function addWeek(songs:Array<String>, weekNum:Int, ?songCharacters:Array<String>)
 	{
@@ -118,34 +119,21 @@ class FreeplayState extends MusicBeatState
 		super.update(elapsed);
 
 		if (FlxG.sound.music.volume < 0.7)
-		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
-		}
 
-		lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore, 0.4));
-
-		if (Math.abs(lerpScore - intendedScore) <= 10)
-			lerpScore = intendedScore;
-
-		scoreText.text = "PERSONAL BEST:" + lerpScore;
+		scoreText.text = "PERSONAL BEST:" + tweenScore;
 
 		var upP = controls.UP_P;
 		var downP = controls.DOWN_P;
 		var accepted = controls.ACCEPT;
 
 		if (upP)
-		{
 			changeSelection(-1);
-		}
 		if (downP)
-		{
 			changeSelection(1);
-		}
 
 		if (controls.BACK)
-		{
 			FlxG.switchState(new MainMenuState());
-		}
 
 		if (accepted)
 		{
@@ -156,6 +144,7 @@ class FreeplayState extends MusicBeatState
 			PlayState.storyDifficulty = curDifficulty;
 
 			PlayState.storyWeek = songs[curSelected].week;
+			unloadAssets();
 			FlxG.switchState(new PlayState());
 		}
 	}
@@ -170,6 +159,10 @@ class FreeplayState extends MusicBeatState
 			curDifficulty = 0;
 
 		intendedScore = Highscore.getScore(songs[curSelected].songName, curDifficulty);
+		FlxTween.num(tweenScore, intendedScore, 0.25, {ease: FlxEase.expoOut}, function(v:Float)
+		{
+			tweenScore = Math.round(v);
+		});
 
 		switch (curDifficulty)
 		{
@@ -190,14 +183,22 @@ class FreeplayState extends MusicBeatState
 			curSelected = 0;
 
 		intendedScore = Highscore.getScore(songs[curSelected].songName, curDifficulty);
-		FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0);
+		FlxTween.num(tweenScore, intendedScore, 0.25, {ease: FlxEase.expoOut}, function(v:Float)
+		{
+			tweenScore = Math.round(v);
+		});
+
+		FlxG.sound.music.stop();
+		songWait.cancel();
+		songWait.start(1, function(tmr:FlxTimer)
+		{
+			FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0);
+		});
 
 		var bullShit:Int = 0;
 
 		for (i in 0...iconArray.length)
-		{
 			iconArray[i].alpha = 0.6;
-		}
 
 		iconArray[curSelected].alpha = 1;
 
@@ -209,10 +210,20 @@ class FreeplayState extends MusicBeatState
 			item.alpha = 0.6;
 
 			if (item.targetY == 0)
-			{
 				item.alpha = 1;
-			}
 		}
+	}
+
+	override function add(Object:flixel.FlxBasic):flixel.FlxBasic
+	{
+		trackedAssets.insert(trackedAssets.length, Object);
+		return super.add(Object);
+	}
+
+	function unloadAssets():Void
+	{
+		for (asset in trackedAssets)
+			remove(asset);
 	}
 }
 

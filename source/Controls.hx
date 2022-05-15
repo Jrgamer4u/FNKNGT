@@ -196,9 +196,7 @@ class Controls extends FlxActionSet
 	}
 
 	override function update()
-	{
 		super.update();
-	}
 
 	public function checkByName(name:Action):Bool
 	{
@@ -221,9 +219,7 @@ class Controls extends FlxActionSet
 	}
 
 	public function getDialogueNameFromToken(token:String):String
-	{
 		return getDialogueName(getActionFromControl(Control.createByName(token.toUpperCase())));
-	}
 
 	function getActionFromControl(control:Control):FlxActionDigital
 	{
@@ -437,7 +433,7 @@ class Controls extends FlxActionSet
 		gamepadsAdded.push(id);
 
 		for (control => buttons in buttonMap)
-			inline bindButtons(control, id, buttons);
+		inline bindButtons(control, id, buttons);
 	}
 
 	inline function addGamepadLiteral(id:Int, ?buttonMap:Map<Control, Array<FlxGamepadInputID>>):Void
@@ -445,7 +441,7 @@ class Controls extends FlxActionSet
 		gamepadsAdded.push(id);
 
 		for (control => buttons in buttonMap)
-			inline bindButtons(control, id, buttons);
+		inline bindButtons(control, id, buttons);
 	}
 
 	public function removeGamepad(deviceID:Int = FlxInputDeviceID.ALL):Void

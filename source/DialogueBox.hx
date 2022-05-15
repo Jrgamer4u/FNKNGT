@@ -4,7 +4,7 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.text.FlxTypeText;
 import flixel.group.FlxSpriteGroup;
-import flixel.text.FlxText;
+import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 
 using StringTools;
@@ -19,8 +19,6 @@ class DialogueBox extends FlxSpriteGroup
 	var dialogueList:Array<String> = [];
 
 	var swagDialogue:FlxTypeText;
-
-	var dropText:FlxText;
 
 	public var finishThing:Void->Void;
 
@@ -93,9 +91,13 @@ class DialogueBox extends FlxSpriteGroup
 		}
 		portraitLeft.updateHitbox();
 		portraitLeft.scrollFactor.set();
-		add(portraitLeft);
-		portraitLeft.visible = false;
-
+		if (PlayState.SONG.song.toLowerCase() != 'roses')
+		{
+			add(portraitLeft);
+			portraitLeft.visible = false;
+			if (PlayState.SONG.song.toLowerCase() == 'thorns')
+				portraitLeft.color = FlxColor.BLACK;
+		}
 		portraitRight = new FlxSprite(0, 240);
 		portraitRight.frames = Paths.getSparrowAtlas('bfPortrait');
 		portraitRight.animation.addByPrefix('enter', 'BF Portrait Enter', 24, false);
@@ -112,14 +114,20 @@ class DialogueBox extends FlxSpriteGroup
 		box.screenCenter(X);
 		portraitLeft.screenCenter(X);
 
-		dropText = new FlxText(26, 1002, Std.int(FlxG.width * 0.9), "", 32);
-		dropText.font = 'Pixel Arial 11 Bold';
-		dropText.color = 0xFF949494;
-		add(dropText);
-
 		swagDialogue = new FlxTypeText(24, 1000, Std.int(FlxG.width * 0.9), "", 32);
 		swagDialogue.font = 'Pixel Arial 11 Bold';
-		swagDialogue.color = 0xFF212121;
+		swagDialogue.borderStyle = SHADOW;
+		if (PlayState.SONG.song.toLowerCase() != "thorns")
+		{
+			swagDialogue.color = 0xFF212121;
+			swagDialogue.borderColor = 0xFF949494;
+		}
+		else
+		{
+			swagDialogue.color = FlxColor.WHITE;
+			swagDialogue.borderColor = FlxColor.BLACK;
+		}
+		swagDialogue.borderSize = 2;
 		swagDialogue.sounds = [FlxG.sound.load(Paths.sound('pixelText'), 0.6)];
 		add(swagDialogue);
 
@@ -131,14 +139,10 @@ class DialogueBox extends FlxSpriteGroup
 
 	override function update(elapsed:Float)
 	{
-		dropText.text = swagDialogue.text;
-
 		if (box.animation.curAnim != null)
 		{
 			if (box.animation.curAnim.name == 'normalOpen' && box.animation.curAnim.finished)
-			{
 				dialogueOpened = true;
-			}
 		}
 
 		if (dialogueOpened && !dialogueStarted)
@@ -168,7 +172,6 @@ class DialogueBox extends FlxSpriteGroup
 						portraitLeft.visible = false;
 						portraitRight.visible = false;
 						swagDialogue.alpha -= 1 / 5;
-						dropText.alpha = swagDialogue.alpha;
 					}, 5);
 
 					new FlxTimer().start(1.2, function(tmr:FlxTimer)

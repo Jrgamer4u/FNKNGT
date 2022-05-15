@@ -1,6 +1,10 @@
 build/
 export/
 .vscode/
+*.code-workspace
+.history/
+.history
+.ionide
 todo
 assets/data/base/
 assets/data/introText.txt

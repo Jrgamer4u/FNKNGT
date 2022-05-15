@@ -32,7 +32,6 @@ class TitleState extends MusicBeatState
 
 	override public function create():Void
 	{
-
 		PlayerSettings.init();
 
 		super.create();
@@ -136,9 +135,7 @@ class TitleState extends MusicBeatState
 			Conductor.songPosition = FlxG.sound.music.time;
 
 		if (FlxG.keys.justPressed.F)
-		{
 			FlxG.fullscreen = !FlxG.fullscreen;
-		}
 
 		var pressedEnter:Bool = FlxG.keys.justPressed.ENTER;
 
@@ -146,9 +143,7 @@ class TitleState extends MusicBeatState
 		for (touch in FlxG.touches.list)
 		{
 			if (touch.justPressed)
-			{
 				pressedEnter = true;
-			}
 		}
 		#end
 
@@ -178,9 +173,7 @@ class TitleState extends MusicBeatState
 		}
 
 		if (pressedEnter && !skippedIntro)
-		{
 			skipIntro();
-		}
 
 		super.update(elapsed);
 	}

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-model href="Project.xsd"?>
-<project>
+<project xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
 	<!-- _________________________ Application Settings _________________________ -->
 
 	<app title="FNKNGT" file="FNKNGT" packageName="com.gmail.ouboreteam.fnkngt" main="Main" version="0.8" company="OuBoRe Team" />
@@ -21,7 +22,7 @@
 	<set name="BUILD_DIR" value="export/release" unless="debug" />
 	<set name="BUILD_DIR" value="export/32bit" if="32bit" />
 
-	<classpath name="source" />
+	<classpath path="source" />
 
 	<assets path="assets/images" />
 
