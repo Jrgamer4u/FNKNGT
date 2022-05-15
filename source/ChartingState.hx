@@ -1,8 +1,5 @@
 package;
 
-import Conductor.BPMChangeEvent;
-import Section.SwagSection;
-import Song.SwagSong;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.display.FlxGridOverlay;
@@ -58,7 +55,7 @@ class ChartingState extends MusicBeatState
 
 	var gridBG:FlxSprite;
 
-	var _song:SwagSong;
+	var _song:Song.SwagSong;
 
 	var typingShit:FlxInputText;
 	var curSelectedNote:Array<Dynamic>;
@@ -81,7 +78,7 @@ class ChartingState extends MusicBeatState
 		add(notetypetext);
 
 		leftIcon = new HealthIcon('bf');
-		rightIcon = new HealthIcon('playerstg1');
+		rightIcon = new HealthIcon('fenberry');
 		leftIcon.scrollFactor.set(1, 1);
 		rightIcon.scrollFactor.set(1, 1);
 
@@ -172,7 +169,7 @@ class ChartingState extends MusicBeatState
 		check_voices.callback = function()
 		{
 			_song.needsVoices = check_voices.checked;
-			FlxG.log.add('CHECKED!');
+			trace('CHECKED!');
 		};
 
 		var check_mute_inst = new FlxUICheckBox(10, 200, null, null, "Mute Instrumental (in editor)", 100);
@@ -664,7 +661,7 @@ class ChartingState extends MusicBeatState
 
 	function recalculateSteps():Int
 	{
-		var lastChange:BPMChangeEvent = {
+		var lastChange:Conductor.BPMChangeEvent = {
 			stepTime: 0,
 			songTime: 0,
 			bpm: 0
@@ -829,7 +826,7 @@ class ChartingState extends MusicBeatState
 
 	private function addSection(lengthInSteps:Int = 16):Void
 	{
-		var sec:SwagSection = {
+		var sec:Section.SwagSection = {
 			lengthInSteps: lengthInSteps,
 			bpm: _song.bpm,
 			changeBPM: false,
@@ -927,7 +924,7 @@ class ChartingState extends MusicBeatState
 
 	function loadLevel():Void
 	{
-		FlxG.log.add(_song.notes);
+		trace(_song.notes);
 	}
 
 	function getNotes():Array<Dynamic>

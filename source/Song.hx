@@ -1,6 +1,5 @@
 package;
 
-import Section.SwagSection;
 import haxe.Json;
 import lime.utils.Assets;
 
@@ -9,7 +8,7 @@ using StringTools;
 typedef SwagSong =
 {
 	var song:String;
-	var notes:Array<SwagSection>;
+	var notes:Array<Section.SwagSection>;
 	var bpm:Int;
 	var needsVoices:Bool;
 	var speed:Float;
@@ -22,7 +21,7 @@ typedef SwagSong =
 class Song
 {
 	public var song:String;
-	public var notes:Array<SwagSection>;
+	public var notes:Array<Section.SwagSection>;
 	public var bpm:Int;
 	public var needsVoices:Bool = true;
 	public var speed:Float = 1;
@@ -39,7 +38,7 @@ class Song
 
 	public static function loadFromJson(jsonInput:String, ?folder:String):SwagSong
 	{
-		var rawJson = Assets.getText('assets/data/' + folder.toLowerCase() + '/' + jsonInput.toLowerCase() + '.json').trim();
+		var rawJson = Assets.getText(Paths.json(folder.toLowerCase() + '/' + jsonInput.toLowerCase())).trim();
 
 		while (!rawJson.endsWith("}"))
 		{

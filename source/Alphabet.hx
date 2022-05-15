@@ -175,7 +175,7 @@ class Alphabet extends FlxSpriteGroup
 				if (FlxG.random.bool(40))
 				{
 					var daSound:String = "GF_";
-					FlxG.sound.play(Paths.soundRandom(daSound, 1, 4), 0.4);
+					FlxG.sound.play(Paths.soundRandom(daSound, 1, 4));
 				}
 
 				add(letter);

@@ -17,9 +17,9 @@ class Character extends FlxSprite
 
 	public function new(x:Float, y:Float, ?character:String = "bf", ?isPlayer:Bool = false)
 	{
-		animOffsets = new Map<String, Array<Dynamic>>();
 		super(x, y);
 
+		animOffsets = new Map<String, Array<Dynamic>>();
 		curCharacter = character;
 		this.isPlayer = isPlayer;
 
@@ -241,8 +241,8 @@ class Character extends FlxSprite
 
 			var theotheroneVar:Float = 4;
 
-			if (curCharacter == 'theotherone')
-				theotheroneVar = 6.1;
+			if (curCharacter == 'outlier')
+				theotheroneVar = 6;
 			if (holdTimer >= Conductor.stepCrochet * theotheroneVar * 0.001)
 			{
 				dance();
@@ -289,8 +289,8 @@ class Character extends FlxSprite
 	{
 		animation.play(AnimName, Force, Reversed, Frame);
 
-		var daOffset = animOffsets.get(animation.curAnim.name);
-		if (animOffsets.exists(animation.curAnim.name))
+		var daOffset = animOffsets.get(AnimName);
+		if (animOffsets.exists(AnimName))
 		{
 			offset.set(daOffset[0], daOffset[1]);
 		}

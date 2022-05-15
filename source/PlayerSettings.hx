@@ -1,6 +1,5 @@
 package;
 
-import Controls;
 import flixel.FlxG;
 import flixel.util.FlxSignal;
 

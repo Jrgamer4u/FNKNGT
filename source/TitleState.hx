@@ -21,7 +21,6 @@ using StringTools;
 class TitleState extends MusicBeatState
 {
 	static var initialized:Bool = false;
-	static public var soundExt:String = ".mp3";
 
 	var blackScreen:FlxSprite;
 	var credGroup:FlxGroup;
@@ -33,9 +32,6 @@ class TitleState extends MusicBeatState
 
 	override public function create():Void
 	{
-		#if (!web)
-		TitleState.soundExt = '.ogg';
-		#end
 
 		PlayerSettings.init();
 
@@ -49,7 +45,7 @@ class TitleState extends MusicBeatState
 		{
 			StoryMenuState.weekUnlocked = FlxG.save.data.weekUnlocked;
 
-			if (StoryMenuState.weekUnlocked.length < 4)
+			if (StoryMenuState.weekUnlocked.length < 1)
 				StoryMenuState.weekUnlocked.insert(0, false);
 
 			if (!StoryMenuState.weekUnlocked[0])
@@ -98,13 +94,7 @@ class TitleState extends MusicBeatState
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);
 
-		logoBl = new FlxSprite(-150, -100);
-		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
-		logoBl.antialiasing = true;
-		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
-		logoBl.animation.play('bump');
-		logoBl.updateHitbox();
-
+		var logoBl:FlxSprite = new FlxSprite(-150, -100).loadGraphic(Paths.image('logoBumpin'));
 		add(logoBl);
 
 		titleText = new FlxSprite(100, FlxG.height * 0.8);
@@ -151,6 +141,16 @@ class TitleState extends MusicBeatState
 		}
 
 		var pressedEnter:Bool = FlxG.keys.justPressed.ENTER;
+
+		#if mobile
+		for (touch in FlxG.touches.list)
+		{
+			if (touch.justPressed)
+			{
+				pressedEnter = true;
+			}
+		}
+		#end
 
 		var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
 
@@ -219,8 +219,6 @@ class TitleState extends MusicBeatState
 	{
 		super.beatHit();
 
-		logoBl.animation.play('bump');
-
 		FlxG.log.add(curBeat);
 
 		switch (curBeat)
@@ -232,7 +230,7 @@ class TitleState extends MusicBeatState
 			case 4:
 				deleteCoolText();
 			case 5:
-				addMoreText('FNKNGT');
+				createCoolText(['FNKNGT']);
 			case 7:
 				skipIntro();
 		}

@@ -1,5 +1,6 @@
 package;
 
+import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.group.FlxSpriteGroup;
 import flixel.math.FlxMath;
@@ -8,6 +9,7 @@ class MenuItem extends FlxSpriteGroup
 {
 	public var targetY:Float = 0;
 	public var week:FlxSprite;
+	public var flashingInt:Int = 0;
 
 	public function new(x:Float, y:Float, weekNum:Int = 0)
 	{

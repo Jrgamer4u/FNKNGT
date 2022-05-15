@@ -60,7 +60,7 @@ class Note extends FlxSprite
 					default:
 						daPath = "NOTE_assets";
 				}
-				frames = Paths.getSparrowAtlas(daPath);
+				frames = Paths.getSparrowAtlas('NOTE_assets');
 
 				animation.addByPrefix('greenScroll', 'green0');
 				animation.addByPrefix('redScroll', 'red0');
@@ -152,13 +152,11 @@ class Note extends FlxSprite
 		{
 			if (strumTime > Conductor.songPosition - Conductor.safeZoneOffset
 				&& strumTime < Conductor.songPosition + (Conductor.safeZoneOffset * 0.5))
-			{
 				canBeHit = true;
-			}
 			else
 				canBeHit = false;
 
-			if (strumTime < Conductor.songPosition - Conductor.safeZoneOffset)
+			if (strumTime < Conductor.songPosition - Conductor.safeZoneOffset && !wasGoodHit)
 				tooLate = true;
 		}
 		else
@@ -166,9 +164,7 @@ class Note extends FlxSprite
 			canBeHit = false;
 
 			if (strumTime <= Conductor.songPosition)
-			{
 				wasGoodHit = true;
-			}
 		}
 
 		if (tooLate)

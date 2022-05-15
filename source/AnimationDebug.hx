@@ -12,7 +12,7 @@ import flixel.util.FlxColor;
 class AnimationDebug extends FlxState
 {
 	var bf:Boyfriend;
-	var theotheronedb:Character;
+	var theotherone:Character;
 	var char:Character;
 	var textAnim:FlxText;
 	var dumbTexts:FlxTypedGroup<FlxText>;
@@ -41,13 +41,13 @@ class AnimationDebug extends FlxState
 
 		if (istheotherone)
 		{
-			theotheronedb = new Character(0, 0, daAnim);
-			theotheronedb.screenCenter();
-			theotheronedb.debugMode = true;
-			add(theotheronedb);
+			theotherone = new Character(0, 0, daAnim);
+			theotherone.screenCenter();
+			theotherone.debugMode = true;
+			add(theotherone);
 
-			char = theotheronedb;
-			theotheronedb.flipX = false;
+			char = theotherone;
+			theotherone.flipX = false;
 		}
 		else
 		{

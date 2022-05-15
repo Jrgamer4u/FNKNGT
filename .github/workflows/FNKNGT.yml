@@ -1,0 +1,49 @@
+name: Build-FNKNGT
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [linux-latest, windows-latest]
+    steps:
+      - uses: krdlab/setup-haxe@v1.1.6
+        with:
+          haxe-version: 4.1.5
+      - if: ${{ matrix.os == 'linux-latest' }}
+        run: |
+          sudo apt-get install libvlc-dev
+          sudo apt-get install libvlccore-dev
+      - name: Setup
+        run: |
+          git clone https://github.com/Jrgamer4u/FNKNGT.git
+          cd FNKNGT/
+          haxelib install lime 7.9.0
+          haxelib install openfl
+          haxelib install flixel
+          haxelib run lime setup
+          haxelib run lime setup flixel
+          haxelib install flixel-tools
+          haxelib run flixel-tools setup
+          haxelib install flixel-addons
+          haxelib install flixel-ui
+          haxelib install hscript
+          haxelib git hxCodec https://github.com/polybiusproxy/hxCodec.git
+      - name: Run build ${{ matrix.os }}
+        run: |
+          echo Starting build ${{ matrix.os }}.
+          haxelib run lime build ${{ matrix.os }} -final -v -D NO_PRECOMPILED_HEADERS
+          echo Completed build ${{ matrix.os }} process successfully.
+      - name: Run build android
+        run: |
+          echo Starting build android.
+          haxelib run lime build android -final -v -D NO_PRECOMPILED_HEADERS
+          echo Completed build android process successfully.

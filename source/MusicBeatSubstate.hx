@@ -1,6 +1,5 @@
 package;
 
-import Conductor.BPMChangeEvent;
 import flixel.FlxSubState;
 
 class MusicBeatSubstate extends FlxSubState
@@ -20,15 +19,6 @@ class MusicBeatSubstate extends FlxSubState
 	inline function get_controls():Controls
 		return PlayerSettings.player1.controls;
 
-	override function create()
-	{
-		#if (!web)
-		TitleState.soundExt = '.ogg';
-		#end
-
-		super.create();
-	}
-
 	override function update(elapsed:Float)
 	{
 		var oldStep:Int = curStep;
@@ -44,7 +34,7 @@ class MusicBeatSubstate extends FlxSubState
 
 	private function updateCurStep():Void
 	{
-		var lastChange:BPMChangeEvent = {
+		var lastChange:Conductor.BPMChangeEvent = {
 			stepTime: 0,
 			songTime: 0,
 			bpm: 0

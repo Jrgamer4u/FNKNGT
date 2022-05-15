@@ -3,14 +3,14 @@
 	<xs:element name="project">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="app">
+				<xs:element name="app" maxOccurs="unbounded">
 					<xs:complexType>
-						<xs:attribute name="title" use="required" />
-						<xs:attribute name="file" use="required" />
-						<xs:attribute name="packageName" use="required" />
-						<xs:attribute name="main" use="required" />
-						<xs:attribute name="version" use="required" />
-						<xs:attribute name="company" use="required" />
+						<xs:attribute name="title" />
+						<xs:attribute name="file" />
+						<xs:attribute name="packageName" />
+						<xs:attribute name="main" />
+						<xs:attribute name="version" type="xs:decimal" />
+						<xs:attribute name="company" />
 					</xs:complexType>
 				</xs:element>
 				<xs:element name="window" maxOccurs="unbounded">

@@ -18,7 +18,7 @@ class StoryMenuState extends MusicBeatState
 
 	var weekView:Array<Dynamic> = [
 		['Outlier', 'The Point', 'Stack the States'],
-		['Hell-o, my name is...', 'What?', 'Who?', 'What?', 'Who?','Hi...', 'Who?', 'My name is...', 'What?', 'BerryFen'],
+		['Hell-O!, my name is...', 'What?', 'Who?', 'What?', 'Who?','Hi...', 'Who?', 'My name is...', 'What?', 'BerryFen'],
 		['The Copycat', 'The "Controller"', '"Player"']
 	];
 	var weekData:Array<Dynamic> = [
@@ -30,9 +30,18 @@ class StoryMenuState extends MusicBeatState
 
 	public static var weekUnlocked:Array<Bool> = [true, false, false];
 
-	var weekCharacters:Array<Dynamic> = [['bl', 'bf', 'gf'], ['bl', 'bf', 'gf'], ['bl', 'bf', 'gf']];
+	var weekCharacters:Array<Dynamic> = [
+		['bl', 'bf', 'gf'],
+		['bl', 'bf', 'gf'],
+		['bl', 'bf', 'gf']
+	];
 
-	var weekNames:Array<String> = ["VS. Outlier", "VS. Fenberry", "VS. PLAYER"];
+	var weekNames:Array<String> = [
+		"Outlier",
+		"Fenberry",
+		'GameToons "PLAYER"'
+	];
+
 	var txtWeekTitle:FlxText;
 	var curWeek:Int = 0;
 	var txtTracklist:FlxText;
@@ -41,6 +50,8 @@ class StoryMenuState extends MusicBeatState
 	var grpLocks:FlxTypedGroup<FlxSprite>;
 	var difficultySelectors:FlxGroup;
 	var sprDifficulty:FlxSprite;
+	var leftArrow:FlxSprite;
+	var rightArrow:FlxSprite;
 
 	override function create()
 	{
@@ -126,12 +137,26 @@ class StoryMenuState extends MusicBeatState
 		difficultySelectors = new FlxGroup();
 		add(difficultySelectors);
 
-		sprDifficulty = new FlxSprite();
+		leftArrow = new FlxSprite(grpWeekText.members[0].x + grpWeekText.members[0].width + 10, grpWeekText.members[0].y + 10);
+		leftArrow.frames = ui_tex;
+		leftArrow.animation.addByPrefix('idle', "arrow left");
+		leftArrow.animation.addByPrefix('press', "arrow push left");
+		leftArrow.animation.play('idle');
+		difficultySelectors.add(leftArrow);
+
+		sprDifficulty = new FlxSprite(leftArrow.x + 130, leftArrow.y);
 		sprDifficulty.frames = ui_tex;
 		sprDifficulty.animation.addByPrefix('normal', 'NORMAL');
 		changeDifficulty();
 
 		difficultySelectors.add(sprDifficulty);
+
+		rightArrow = new FlxSprite(sprDifficulty.x + sprDifficulty.width + 50, leftArrow.y);
+		rightArrow.frames = ui_tex;
+		rightArrow.animation.addByPrefix('idle', 'arrow right');
+		rightArrow.animation.addByPrefix('press', "arrow push right", 24, false);
+		rightArrow.animation.play('idle');
+		difficultySelectors.add(rightArrow);
 
 		add(yellowBG);
 		add(grpWeekCharacters);
@@ -178,6 +203,16 @@ class StoryMenuState extends MusicBeatState
 				{
 					changeWeek(1);
 				}
+
+				if (controls.RIGHT)
+					rightArrow.animation.play('press')
+				else
+					rightArrow.animation.play('idle');
+
+				if (controls.LEFT)
+					leftArrow.animation.play('press');
+				else
+					leftArrow.animation.play('idle');
 			}
 
 			if (controls.ACCEPT)
@@ -244,9 +279,10 @@ class StoryMenuState extends MusicBeatState
 
 		sprDifficulty.alpha = 0;
 
+		sprDifficulty.y = leftArrow.y - 15;
 		intendedScore = Highscore.getWeekScore(curWeek, curDifficulty);
 
-		FlxTween.tween(sprDifficulty, {y: sprDifficulty.y, alpha: 1}, 0.07);
+		FlxTween.tween(sprDifficulty, {y: leftArrow.y + 15, alpha: 1}, 0.07);
 	}
 
 	var lerpScore:Int = 0;
@@ -285,10 +321,12 @@ class StoryMenuState extends MusicBeatState
 		grpWeekCharacters.members[2].animation.play(weekCharacters[curWeek][2]);
 		txtTracklist.text = "Tracks\n";
 
-		grpWeekCharacters.members[0].offset.set(100, 100);
-		grpWeekCharacters.members[0].setGraphicSize(Std.int(grpWeekCharacters.members[0].width * 1));
+		
+				grpWeekCharacters.members[0].offset.set(100, 100);
+				grpWeekCharacters.members[0].setGraphicSize(Std.int(grpWeekCharacters.members[0].width * 1));
+		
 
-		var stringThing:Array<String> = weekView[curWeek];
+		var stringThing:Array<String> = weekData[curWeek];
 
 		for (i in stringThing)
 		{
@@ -296,7 +334,7 @@ class StoryMenuState extends MusicBeatState
 		}
 
 		txtTracklist.text += "\n";
-		txtTracklist.text = txtTracklist.text.toUpperCase();
+		txtTracklist.text = txtTracklist.text;
 
 		txtTracklist.screenCenter(X);
 		txtTracklist.x -= FlxG.width * 0.35;

@@ -1,6 +1,5 @@
 package;
 
-import Conductor.BPMChangeEvent;
 import flixel.addons.ui.FlxUIState;
 
 class MusicBeatState extends FlxUIState
@@ -18,9 +17,7 @@ class MusicBeatState extends FlxUIState
 	override function create()
 	{
 		if (transIn != null)
-			#if (!web)
-			TitleState.soundExt = '.ogg';
-			#end
+			trace('reg ' + transIn.region);
 
 		super.create();
 	}
@@ -45,7 +42,7 @@ class MusicBeatState extends FlxUIState
 
 	private function updateCurStep():Void
 	{
-		var lastChange:BPMChangeEvent = {
+		var lastChange:Conductor.BPMChangeEvent = {
 			stepTime: 0,
 			songTime: 0,
 			bpm: 0

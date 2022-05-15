@@ -69,7 +69,7 @@ class DialogueBox extends FlxSpriteGroup
 		if (!hasDialog)
 			return;
 
-		portraitLeft = new FlxSprite(240, 40);
+		portraitLeft = new FlxSprite(1720, 240);
 
 		if (PlayState.SONG.song.toLowerCase() == 'hell-o')
 		{
@@ -96,7 +96,7 @@ class DialogueBox extends FlxSpriteGroup
 		add(portraitLeft);
 		portraitLeft.visible = false;
 
-		portraitRight = new FlxSprite(0, 40);
+		portraitRight = new FlxSprite(0, 240);
 		portraitRight.frames = Paths.getSparrowAtlas('bfPortrait');
 		portraitRight.animation.addByPrefix('enter', 'BF Portrait Enter', 24, false);
 		portraitRight.updateHitbox();
@@ -105,7 +105,7 @@ class DialogueBox extends FlxSpriteGroup
 		portraitRight.visible = false;
 
 		box.animation.play('normalOpen');
-		box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 1.8));
+		box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 1.9));
 		box.updateHitbox();
 		add(box);
 

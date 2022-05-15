@@ -1,4 +1,5 @@
 # FNKNGT
+This is the repository for FNKNGT.
 
 ## Credits:
 
@@ -62,6 +63,8 @@ In order to make your game work, every Linux user (this includes the player) has
 sudo apt-get install libvlc-dev
 sudo apt-get install libvlccore-dev
 ```
+
+When compiled, there will be a NOTICE.txt file. Tell the player to read the NOTICE.txt file.
 
 ## Build instructions:
 

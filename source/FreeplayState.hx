@@ -11,7 +11,7 @@ using StringTools;
 
 class FreeplayState extends MusicBeatState
 {
-	var songs:Array<String> = [];
+	var songs:Array<SongMetadata> = [];
 
 	var selector:FlxText;
 	var curSelected:Int = 0;
@@ -25,15 +25,28 @@ class FreeplayState extends MusicBeatState
 	private var grpSongs:FlxTypedGroup<Alphabet>;
 	private var curPlaying:Bool = false;
 
+	private var iconArray:Array<HealthIcon> = [];
+
 	override function create()
 	{
-		songs = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist'));
+		var initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist'));
+
+		for (i in 0...initSonglist.length)
+		{
+			songs.push(new SongMetadata(initSonglist[i], 0, 'outlier'));
+		}
 
 		var isDebug:Bool = false;
 
 		#if debug
 		isDebug = true;
 		#end
+
+		if (StoryMenuState.weekUnlocked[1] || isDebug)
+			addWeek(['Hell-O', 'Whas', 'Berryfen'], 1, ['fenberry']);
+
+		if (StoryMenuState.weekUnlocked[2] || isDebug)
+			addWeek(['Copycat', 'Controller', 'Player'], 2, ['playerstg1', 'playerstg2', 'playerstg3']);
 
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuBGBlue'));
 		add(bg);
@@ -43,10 +56,16 @@ class FreeplayState extends MusicBeatState
 
 		for (i in 0...songs.length)
 		{
-			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i], true, false);
+			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i].songName, true, false);
 			songText.isMenuItem = true;
 			songText.targetY = i;
 			grpSongs.add(songText);
+
+			var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
+			icon.sprTracker = songText;
+
+			iconArray.push(icon);
+			add(icon);
 		}
 
 		scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
@@ -72,6 +91,26 @@ class FreeplayState extends MusicBeatState
 		var swag:Alphabet = new Alphabet(1, 0, "swag");
 
 		super.create();
+	}
+
+	public function addSong(songName:String, weekNum:Int, songCharacter:String)
+	{
+		songs.push(new SongMetadata(songName, weekNum, songCharacter));
+	}
+
+	public function addWeek(songs:Array<String>, weekNum:Int, ?songCharacters:Array<String>)
+	{
+		if (songCharacters == null)
+			songCharacters = ['bf'];
+
+		var num:Int = 0;
+		for (song in songs)
+		{
+			addSong(song, weekNum, songCharacters[num]);
+
+			if (songCharacters.length != 1)
+				num++;
+		}
 	}
 
 	override function update(elapsed:Float)
@@ -110,14 +149,14 @@ class FreeplayState extends MusicBeatState
 
 		if (accepted)
 		{
-			var poop:String = Highscore.formatSong(songs[curSelected].toLowerCase(), curDifficulty);
+			var poop:String = Highscore.formatSong(songs[curSelected].songName.toLowerCase(), curDifficulty);
 
-			PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].toLowerCase());
+			PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase());
 			PlayState.isStoryMode = false;
 			PlayState.storyDifficulty = curDifficulty;
+
+			PlayState.storyWeek = songs[curSelected].week;
 			FlxG.switchState(new PlayState());
-			if (FlxG.sound.music != null)
-				FlxG.sound.music.stop();
 		}
 	}
 
@@ -130,7 +169,7 @@ class FreeplayState extends MusicBeatState
 		if (curDifficulty > 0)
 			curDifficulty = 0;
 
-		intendedScore = Highscore.getScore(songs[curSelected], curDifficulty);
+		intendedScore = Highscore.getScore(songs[curSelected].songName, curDifficulty);
 
 		switch (curDifficulty)
 		{
@@ -150,9 +189,17 @@ class FreeplayState extends MusicBeatState
 		if (curSelected >= songs.length)
 			curSelected = 0;
 
-		intendedScore = Highscore.getScore(songs[curSelected], curDifficulty);
+		intendedScore = Highscore.getScore(songs[curSelected].songName, curDifficulty);
+		FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0);
 
 		var bullShit:Int = 0;
+
+		for (i in 0...iconArray.length)
+		{
+			iconArray[i].alpha = 0.6;
+		}
+
+		iconArray[curSelected].alpha = 1;
 
 		for (item in grpSongs.members)
 		{
@@ -166,5 +213,19 @@ class FreeplayState extends MusicBeatState
 				item.alpha = 1;
 			}
 		}
+	}
+}
+
+class SongMetadata
+{
+	public var songName:String = "";
+	public var week:Int = 0;
+	public var songCharacter:String = "";
+
+	public function new(song:String, week:Int, songCharacter:String)
+	{
+		this.songName = song;
+		this.week = week;
+		this.songCharacter = songCharacter;
 	}
 }
