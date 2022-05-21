@@ -31,20 +31,7 @@ class Main extends Sprite
 
 	private function setupGame():Void
 	{
-		var stageWidth:Int = Lib.current.stage.stageWidth;
-		var stageHeight:Int = Lib.current.stage.stageHeight;
-
-		var gameWidth:Int = 2560;
-		var gameHeight:Int = 1440;
-		var zoom:Float = -1;
-
-		var ratioX:Float = stageWidth / gameWidth;
-		var ratioY:Float = stageHeight / gameHeight;
-		zoom = Math.min(ratioX, ratioY);
-		gameWidth = Math.ceil(stageWidth / zoom);
-		gameHeight = Math.ceil(stageHeight / zoom);
-
-		addChild(new FlxGame(gameWidth, gameHeight, TitleState, zoom, 96, 96, true, true));
+		addChild(new FlxGame(2560, 1440, TitleState, 1, 96, 96, true, true));
 
 		#if !mobile
 		addChild(new FPS(10, 3, 0xFFFFFF));

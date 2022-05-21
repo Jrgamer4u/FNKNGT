@@ -15,6 +15,7 @@
 									<xs:enumeration value="167" />
 									<xs:enumeration value="332" />
 									<xs:enumeration value="511" />
+									<xs:enumeration value="694" />
 									<xs:enumeration value="859" />
 								</xs:restriction>
 							</xs:simpleType>
@@ -23,6 +24,10 @@
 							<xs:simpleType>
 								<xs:restriction base="xs:string">
 									<xs:enumeration value="484" />
+									<xs:enumeration value="487" />
+									<xs:enumeration value="606" />
+									<xs:enumeration value="607" />
+									<xs:enumeration value="610" />
 									<xs:enumeration value="615" />
 									<xs:enumeration value="627" />
 									<xs:enumeration value="629" />
@@ -35,7 +40,11 @@
 						<xs:attribute name="height" type="xs:integer" use="required">
 							<xs:simpleType>
 								<xs:restriction base="xs:string">
+									<xs:enumeration value="111" />
 									<xs:enumeration value="122" />
+									<xs:enumeration value="155" />
+									<xs:enumeration value="158" />
+									<xs:enumeration value="163" />
 									<xs:enumeration value="169" />
 									<xs:enumeration value="170" />
 									<xs:enumeration value="173" />

@@ -84,7 +84,7 @@ class DialogueBox extends FlxSpriteGroup
 			portraitLeft.frames = Paths.getSparrowAtlas('playerstg1Portrait');
 			portraitLeft.animation.addByPrefix('enter', 'playerstg1 Portrait Enter', 24, false);
 		}
-		else if (PlayState.SONG.song.toLowerCase() == 'end1')
+		else if (PlayState.SONG.song.toLowerCase() == 'player')
 		{
 			portraitLeft.frames = Paths.getSparrowAtlas('playerstg3Portrait');
 			portraitLeft.animation.addByPrefix('enter', 'playerstg3 Portrait Enter', 24, false);

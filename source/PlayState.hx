@@ -82,7 +82,8 @@ class PlayState extends MusicBeatState
 	private var camHUD:FlxCamera;
 	private var camGame:FlxCamera;
 
-	var dialogue:Array<String> = ['blah blah blah', 'coolswag'];
+	var dialogue:Array<String> = [':bf:hello', ':too:cool'];
+	var diaEnd:Array<String> = [':bf:bye', ':too:yall'];
 
 	var fbfBGweek:FlxSprite;
 
@@ -129,14 +130,17 @@ class PlayState extends MusicBeatState
 		Conductor.changeBPM(SONG.bpm);
 
 		var file:String = Paths.txt(SONG.song.toLowerCase() + '/' + 'Dialogue');
+		var file2:String = Paths.txt(SONG.song.toLowerCase() + '/' + 'DiaEnd');
 
 		try
 		{
 			dialogue = CoolUtil.coolTextFile(file);
+			diaEnd = CoolUtil.coolTextFile(file2);
 		}
 		catch (ex:Any)
 		{
 			dialogue = null;
+			diaEnd = null;
 		}
 
 		switch (SONG.song.toLowerCase())
@@ -218,11 +222,8 @@ class PlayState extends MusicBeatState
 		add(boyfriend);
 
 		var doof:DialogueBox = new DialogueBox(false, dialogue);
-		var doof2:DialogueBox = new DialogueBox(false, dialogue);
 		doof.scrollFactor.set();
-		doof2.scrollFactor.set();
 		doof.finishThing = startCountdown;
-		doof2.finishThing = commitsomething;
 
 		Conductor.songPosition = -5000;
 
@@ -299,7 +300,6 @@ class PlayState extends MusicBeatState
 		iconP2.cameras = [camHUD];
 		scoreTxt.cameras = [camHUD];
 		doof.cameras = [camHUD];
-		doof2.cameras = [camHUD];
 		reuploadWatermark.cameras = [camHUD];
 
 		startingSong = true;
@@ -316,12 +316,8 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'hell-o':
 					playCutscene('Algodoo.mp4');
-				case 'staaack theee stateees':
-					playCutscene('test.mp4');
 				case 'copycat':
 					schoolIntro(doof);
-				case 'end1':
-					endDia(doof2);
 				default:
 					startCountdown();
 			}
@@ -336,8 +332,6 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'copycat':
 					schoolIntro(doof);
-				case 'end1':
-					endDia(doof2);
 				default:
 					startCountdown();
 			}
@@ -460,6 +454,33 @@ class PlayState extends MusicBeatState
 		video.finishCallback = function()
 		{
 			startCountdown();
+		}
+	}
+
+	function playEndCutsceneLastSong(name:String)
+	{
+		inCutscene = true;
+
+		var video:VideoHandler = new VideoHandler();
+		FlxG.sound.music.stop();
+		video.playVideo(Paths.video(name));
+		video.finishCallback = function()
+		{
+			FlxG.switchState(new StoryMenuState());
+		}
+	}
+
+	function playEndCutscene(name:String)
+	{
+		inCutscene = true;
+
+		var video:VideoHandler = new VideoHandler();
+		FlxG.sound.music.stop();
+		video.playVideo(Paths.video(name));
+		video.finishCallback = function()
+		{
+			SONG = Song.loadFromJson(storyPlaylist[0].toLowerCase());
+			FlxG.switchState(new PlayState());
 		}
 	}
 
@@ -1065,13 +1086,26 @@ class PlayState extends MusicBeatState
 
 			if (storyPlaylist.length <= 0)
 			{
+				var doof2:DialogueBox = new DialogueBox(false, diaEnd);
+				doof2.scrollFactor.set();
+				doof2.finishThing = commitsomething;
+				doof2.cameras = [camHUD];
+
 				FlxG.sound.playMusic(Paths.music('freakyMenu'));
 
 				transIn = FlxTransitionableState.defaultTransIn;
 				transOut = FlxTransitionableState.defaultTransOut;
 				unloadAssets();
 
-				FlxG.switchState(new StoryMenuState());
+				switch (SONG.song.toLowerCase())
+				{
+					case 'staaack theee stateees':
+						playEndCutsceneLastSong('test.mp4');
+					case 'player':
+						endDia(doof2);
+					default:
+						FlxG.switchState(new StoryMenuState());
+				}
 
 				StoryMenuState.weekUnlocked[Std.int(Math.min(storyWeek + 1, StoryMenuState.weekUnlocked.length - 1))] = true;
 

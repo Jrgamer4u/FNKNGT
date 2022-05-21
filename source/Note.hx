@@ -27,8 +27,8 @@ class Note extends FlxSprite
 
 	public static var swagWidth:Float = 160 * 0.7;
 	public static var PURP_NOTE:Int = 0;
-	public static var GREEN_NOTE:Int = 2;
 	public static var BLUE_NOTE:Int = 1;
+	public static var GREEN_NOTE:Int = 2;
 	public static var RED_NOTE:Int = 3;
 	public static var arrowName:String = "";
 	public static var arrowPixelNum:Int = 0;
@@ -52,16 +52,12 @@ class Note extends FlxSprite
 		{
 			case 0:
 				arrowName = "purple";
-				arrowPixelNum = 4;
 			case 1:
 				arrowName = "blue";
-				arrowPixelNum = 5;
 			case 2:
 				arrowName = "green";
-				arrowPixelNum = 6;
 			case 3:
 				arrowName = "red";
-				arrowPixelNum = 7;
 		}
 		var daStage:String = PlayState.curStage;
 
@@ -78,12 +74,9 @@ class Note extends FlxSprite
 				}
 				frames = Paths.getSparrowAtlas('NOTE_assets');
 
-				animation.addByPrefix(arrowName + 'Scroll', arrowName);
+				animation.addByPrefix(arrowName + 'Scroll', arrowName + '0');
 
-				if (noteData == 0)
-					animation.addByPrefix('purpleholdend', 'pruple end hold');
-				else
-					animation.addByPrefix(arrowName + 'holdend', arrowName + ' hold end');
+				animation.addByPrefix(arrowName + 'holdend', arrowName + ' hold end');
 
 				animation.addByPrefix(arrowName + 'hold', ' hold piece');
 

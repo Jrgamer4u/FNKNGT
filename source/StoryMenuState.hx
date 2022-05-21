@@ -26,7 +26,7 @@ class StoryMenuState extends MusicBeatState
 	var weekData:Array<Dynamic> = [
 		['Outliiier', 'Poiiint', 'Staaack Theee Stateees'],
 		['Hell-O', 'Whas', 'Berryfen'],
-		['Copycat', 'Controller', 'Player', 'End1']
+		['Copycat', 'Controller', 'Player']
 	];
 	var curDifficulty:Int = 0;
 
@@ -201,7 +201,6 @@ class StoryMenuState extends MusicBeatState
 				FlxG.sound.play(Paths.sound('confirmMenu'));
 
 				grpWeekText.members[curWeek].week.animation.resume();
-				unloadAssets();
 
 				grpWeekCharacters.members[1].animation.play('bfConfirm');
 				stopspamming = true;
@@ -220,6 +219,7 @@ class StoryMenuState extends MusicBeatState
 			PlayState.campaignScore = 0;
 			new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
+				unloadAssets();
 				FlxG.switchState(new PlayState());
 			});
 		}
