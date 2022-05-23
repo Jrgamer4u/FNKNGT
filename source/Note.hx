@@ -69,6 +69,8 @@ class Note extends FlxSprite
 				{
 					case "warning":
 						daPath = "NOTE_warning";
+					case "danger":
+						daPath = "NOTE_danger";
 					default:
 						daPath = "NOTE_assets";
 				}

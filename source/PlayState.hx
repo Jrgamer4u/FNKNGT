@@ -116,9 +116,7 @@ class PlayState extends MusicBeatState
 		camHUD.bgColor.alpha = 0;
 
 		FlxG.cameras.reset(camGame);
-		FlxG.cameras.add(camHUD);
-
-		FlxCamera.defaultCameras = [camGame];
+		FlxG.cameras.add(camHUD, false);
 
 		persistentUpdate = true;
 		persistentDraw = true;
@@ -1418,6 +1416,9 @@ class PlayState extends MusicBeatState
 	{
 		if (!boyfriend.stunned)
 		{
+			// if (note.noteStyle == 'danger')
+			// 	health = 0;
+
 			health -= 0.04;
 			if (combo > 5 && gf.animOffsets.exists('sad'))
 				gf.playAnim('sad');
@@ -1500,7 +1501,7 @@ class PlayState extends MusicBeatState
 					boyfriend.playAnim('singRIGHT', true);
 			}
 
-			if (note.noteStyle == "warning")
+			if (note.noteStyle == 'danger')
 				health = 0;
 
 			playerStrums.forEach(function(spr:FlxSprite)

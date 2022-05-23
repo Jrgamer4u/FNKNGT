@@ -40,7 +40,7 @@ class ChartingState extends MusicBeatState
 	var bullshitUI:FlxGroup;
 
 	var noteStyle:Int = 0;
-	var styles:Array<String> = ["normal", "warning"];
+	var styles:Array<String> = ["normal", "warning", "danger"];
 
 	var notetypetext:FlxText = new FlxText(-200, 0, 0, "Charting: ", 16);
 

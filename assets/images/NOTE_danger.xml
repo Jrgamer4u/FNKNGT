@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-model href="NOTE_warning.xsd"?>
-<TextureAtlas imagePath="NOTE_warning.png">
+<?xml-model href="NOTE_danger.xsd"?>
+<TextureAtlas imagePath="NOTE_danger.png">
 	<SubTexture name="arrowDOWN0000" x="0" y="235" width="157" height="153" />
 	<SubTexture name="arrowLEFT0000" x="310" y="235" width="153" height="157" />
 	<SubTexture name="arrowRIGHT0000" x="157" y="235" width="153" height="157" />

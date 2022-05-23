@@ -1,10 +1,11 @@
+assets/data/base/
+assets/data/introText.txt
+assets/images/New Folder
+docs/CHANGELOG_GAMEBANANA.md
 export/
-.vscode/
-*.code-workspace
+todo
 .history/
 .history
 .ionide
-todo
-assets/data/base/
-assets/data/introText.txt
-docs/CHANGELOG_GAMEBANANA.md
+.vscode/
+*.code-workspace

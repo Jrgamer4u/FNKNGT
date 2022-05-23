@@ -120,13 +120,13 @@
                         5925,
                         0,
                         0,
-                        "warning"
+                        "danger"
                     ],
                     [
                         5925,
                         4,
                         0,
-                        "warning"
+                        "danger"
                     ]
                 ],
                 "bpm": 200,
@@ -152,49 +152,49 @@
                         6000,
                         0,
                         0,
-                        "warning"
+                        "danger"
                     ],
                     [
                         6075,
                         0,
                         0,
-                        "warning"
+                        "danger"
                     ],
                     [
                         6150,
                         0,
                         0,
-                        "warning"
+                        "danger"
                     ],
                     [
                         6225,
                         0,
                         0,
-                        "warning"
+                        "danger"
                     ],
                     [
                         6225,
                         4,
                         0,
-                        "warning"
+                        "danger"
                     ],
                     [
                         6150,
                         4,
                         0,
-                        "warning"
+                        "danger"
                     ],
                     [
                         6075,
                         4,
                         0,
-                        "warning"
+                        "danger"
                     ],
                     [
                         6000,
                         4,
                         0,
-                        "warning"
+                        "danger"
                     ],
                     [
                         6225,
@@ -520,49 +520,49 @@
                         14550,
                         0,
                         0,
-                        "warning"
+                        "danger"
                     ],
                     [
                         14775,
                         0,
                         0,
-                        "warning"
+                        "danger"
                     ],
                     [
                         14700,
                         0,
                         0,
-                        "warning"
+                        "danger"
                     ],
                     [
                         14625,
                         0,
                         0,
-                        "warning"
+                        "danger"
                     ],
                     [
                         14550,
                         4,
                         0,
-                        "warning"
+                        "danger"
                     ],
                     [
                         14625,
                         4,
                         0,
-                        "warning"
+                        "danger"
                     ],
                     [
                         14700,
                         4,
                         0,
-                        "warning"
+                        "danger"
                     ],
                     [
                         14775,
                         4,
                         0,
-                        "warning"
+                        "danger"
                     ]
                 ],
                 "bpm": 200,

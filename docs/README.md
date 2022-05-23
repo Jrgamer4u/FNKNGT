@@ -24,7 +24,7 @@ Use the setup.bat included in the project.
 
 If you can't open the bat file, this is the list of the required programs:
 
-[haxe 4.1.5](https://haxe.org/download/version/4.1.5/)
+[haxe](https://haxe.org/download/)
 
 haxelib install lime 7.9.0
 
